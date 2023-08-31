@@ -1,0 +1,2164 @@
+{
+	"info": {
+		"_postman_id": "60fd54ca-f12c-4223-80d8-263cae17ab4e",
+		"name": "Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25603710"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var saved_response = {\r",
+									"    \"redirect_uri\": \"/oauth2/continue?client_id=vO1Kblk7xX9tUn2cpZLS&next=UrYH54PoJXkCmE7eqEoflgF3mRG1XC0xBB9tnWdYHc4m8RR8NNqTFYwww-e4md_Cm24Gq3UPctglYNRssxrnbmj0oeaOaP_m3wdDrSUSqATUPo60WN8zCx8-_6XZV__QsfwE6fJLiv5C1U9EiVRAK8oIe1Uugj_YTjiFUxzW0gNrxUNp12ISULIr2euJFej2ejR_aCPFNmjeYFRfsEcjbguCXDeki-Z3OyNpEYeQG3Tv5NCWKC1nIMw0dYPmu2JCBuaL84g09pOBzNiAxiOrEeRcfefqJNFcjFJ82x_Ba9qmalCLQ-sSj3DG7w61FR4vdgsMx_AQsPd6E49jX-fOro9jXMLTd2QMgU6wQUAfts9VzeIAEbWJqOwjSfroa21GKhgDpduI5nnu2TnIDwIQli_6WAOdJjD0v45zfW1GKyB49hORsqbJ_eY27dD-SB0SNk8EHp5wzgSd0n01cYFGl85m2KbFw7l_yDSuP0p3IWAK9quOlG9DBJoKl3nIW4XcNlH3FxfvgkG73CW6JBgnfzQ4k43cv6R36n6PR1RcFSZulzez5Srv2DCFn2Olmm-82J9C_YmXq-nYHtLgw7ZpnxGg5cmDPrf21IoMibYGvIbTXFK8IYBVA94vbOR4qSkxUvk2pMC_SHi8G1OgHzZ5w72Na8t474_sA1f7WwBJjsmP9JqDhu_Ka3wcHUbn75qMEKPNLyA2Y5eLEyfJDVTWdEUs9KWtMJAmI6-Nl2aWHTr4x4_Qfpei6EivB6QEjT0VWJXwWAGphYWhtUWvzYcklcmEshu71mv3ViUdi9noeBdrXCb32zziL2fPIKHvqOMM3dxEyoCA0JhtXRFGqmrIRwm0dmTHrCpS4xuiOskYg-Lu539RjgDu8LFSqh769CjHlQsZy26y3MAG6NyLKtka4DqlAx7Oh2GfNCUkqAdc_77XQHO7riPfdQvGcqLTvZ_fk33Dqw72w8cNaaPT6J6z8t7p4HyUo9SxSqwJmTC5cHY4lJIc8LTDzfAPFME8Q4KIdpmd31zUVy9GIqxWQxPdQ3M6W6X0z6MCpCB-0i5bfQbkd634PW4NV46u2ROLFjF1XRuvT56myVbevdSiL4BYaRzaqfnmNgrBXxzMtkjUExvtAa5AAwFEFMyI0xN6UXWR4XzXPI9PXyIWaXKr-3_ELtwJK3TV9CQLr9FKtpfAMx_CK8ajC7Zv1OF1a2nfrYt9KXfNoEbL1sBuzpJzzMRbAJnZHjsb4Kh9KAubmO8j3d5bdQKlQ2wYXfQ\",\r",
+									"    \"nextStep\": \"STEP_SUCCESS\",\r",
+									"    \"identifier\": {\r",
+									"        \"type\": \"IDENTIFIER_TYPE__EMAIL\",\r",
+									"        \"value\": \"shahbahram508@gmail.com\"\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.collectionVariables.set(\"redirect_uri\", saved_response.redirect_uri);\r",
+									"\r",
+									"function _replacePropertyValue(objKeys, newVal, object) {\r",
+									"  const newObject = object;\r",
+									"\r",
+									"  for (var key in object) {\r",
+									"    if (objKeys.includes(key)) {\r",
+									"      newObject[key] = newVal;\r",
+									"    } else if (typeof(object[key]) === 'object' || typeof(object[key]) === 'array') {\r",
+									"      newObject[key] = replacePropertyValue(objKeys, newVal, object[key]);\r",
+									"    }\r",
+									"  }\r",
+									"\r",
+									"  return newObject;\r",
+									"}\r",
+									"\r",
+									"function replacePropertyValue(objKeys, newVal, object) {\r",
+									"    if (typeof (object) === 'array') {\r",
+									"        var items = []\r",
+									"        for (var item in object) {\r",
+									"            items.push(_replacePropertyValue(objKeys, newVal, item));\r",
+									"        }\r",
+									"        return items\r",
+									"    } else if (typeof (object) === 'object') {\r",
+									"        return _replacePropertyValue(objKeys, newVal, object);\r",
+									"    } else {\r",
+									"        return object\r",
+									"    }\r",
+									"}\r",
+									"\r",
+									"var response = pm.response.json();\r",
+									"\r",
+									"var keys_to_update = [\"redirect_uri\"];\r",
+									"\r",
+									"delete response.show_action_bar\r",
+									"delete response.show_categories\r",
+									"\r",
+									"var expected_response = replacePropertyValue(keys_to_update, 0, saved_response);\r",
+									"var actual_response = replacePropertyValue(keys_to_update, 0, response);\r",
+									"\r",
+									"pm.test(\"Test data type of the response\", () => {\r",
+									"  pm.expect(pm.response.json()).to.be.an(\"object\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validate schema of response\", () => {\r",
+									"  pm.environment.set(\"expected\", JSON.stringify(expected_response));\r",
+									"  pm.environment.set(\"actual\", JSON.stringify(actual_response));\r",
+									"  pm.expect(expected_response).to.deep.equal(actual_response);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "account.booking.com"
+							},
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "max-age=0"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "px_init=0; cors_js=1; BJS=-; _gid=GA1.2.1703675266.1693407760; pxcts=47d4b64b-4746-11ee-8ddd-59524a7a536e; _pxvid=47d4ab82-4746-11ee-8ddd-aaaaa1bd92fa; bkng_prue=1; _gcl_au=1.1.1146911255.1693407788; _scid=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _pin_unauth=dWlkPVpEUTBNMk16WmprdFl6TmxNUzAwTm1Sa0xUbG1Zamt0TldNd05UTTRNV1kzTW1abA; _sctr=1%7C1693335600000; g_state={\"i_p\":1693414993050,\"i_l\":1}; bkng_ap_lang=en-us; cto_bundle=yK0cGF9xQ2xOcExTM1BjM3hqaDVFdW9Zemp6TWNqOWslMkJjMGpkckhZOW5xWVRUSmt5N080TU45YXc3Y0psMmlISkRDYmV2WU1pNVJwMlZQcHI4dDRHak51UW5Tc2ZUdkFjWGx1TTZyZTA5VEhpZWFpOUJUSHY1aUFQUnNBRVVKM0JJUlg2MFUxcTJ6RzZaMTBaSGZUN1pFN1F5ZyUzRCUzRA; _scid_r=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _derived_epik=dj0yJnU9SlhlU28ycl8xNEg1b0l4RHctUmxVSE5oMFRfeTFTam4mbj1ZV2VZeXlWellTZG5DNC1fenZWUTdnJm09MSZ0PUFBQUFBR1R2YXpzJnJtPTEmcnQ9QUFBQUFHVHZhenMmc3A9Mg; _ga_FPD6YLJCJ7=GS1.1.1693407787.1.1.1693412158.0.0.0; _ga=GA1.2.29860013.1693407760; pcm_consent=consentedAt%3D2023-08-30T16%3A48%3A09.120Z%26countryCode%3DPK%26expiresAt%3D2024-02-26T16%3A48%3A09.120Z%26implicit%3Dfalse%26regulation%3Dnone%26legacyRegulation%3Dnone%26consentId%3D0c32f29a-18cb-4929-b4df-24671b2c58e7%26analytical%3Dtrue%26marketing%3Dtrue; reese84=3:c46FrqlkSnd8Y0i0Iuz/bw==:hh5Hf+vCBe/a+UU9ndO6G/xpPbsrsC5NhND2DUHO01j+cNvOLmlu9BSGpj5z+guabQxFIBcW0gfOtPIoACOvvLnPJQ5oNgsJnd6UfV/WeRg00PiUnnzu31Nx2QGdDdnG9xYBeTnFNL/ey65BePAAWLiUkMqfD3AyXpAp7lIRRAZXdHnDvsnw9JJq+aLLD8sB3kvqAP7PsPGtL2P7dS8s+pZVx6Ph4P8d07tFB0PYIu0zTq0Wy+nWJb73py5HsD8UOcrIP9shbsNwdjnvC/j4aclTGM+axE2c5qvGKFrLaADvKBIu8g+IYuVAbehRl9onyND6Rk6Q0XEqpSp0OtUM1zTkpHuZANr++9Wx3NY6ZvFhCi1RjEIOIjb0gEcX8eR2YulAGYrDruUB+TB4rxp6ZdVXZk9VH0S3g54uBkBYKUhUG2VkviG7ckxOvCUgs4uTk3EmDlQRZz182HbyP4MNvsViQenlqoq1OkDVQjwY5yVAURXeXF9yegMQayoy7fiC:1t0bbP3MDYmrWnEMxpCew/xmP8lsoR/9N9Y6ffLQtNc=; _pxhd=ww6VhM7hZaAjABdcwNoTxHB8beHpoNlFEeyx0WsL%2Fsr518aerBBnVNoV4ZYQtKeLLLgAeyHEQHL3AD1Ila4ovQ%3D%3D%3AcGk2gwSTCSrqxu5sdspqyj9R3YqV7OKsD2r6SPkX1LI7lrokEY732Wgu5F3JQyHzqmTtvFJ%2FkD8vBJ9U7Au9vVeKOaDvwdpe%2FoFvJ3qeznw%3D; bkng_sso_session=e30; bkng_sso_auth=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; bkng_sso_auth_1693420892=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; _gat=1; _uetsid=542b6da0474611ee82db0961c6c94a6c; _uetvid=542bb400474611ee8208356ca10a19c7; lastSeen=1693420898101; bkng=11UmFuZG9tSVYkc2RlIyh9Yaa29%2F3xUOLbbmD9q%2B5pe3Wh6CkJpYLo8RL4PztOsp2tHSoooyIqWJFbky5SvedT0xjRZx%2FJH1cApkyff3REANdnlPcaaW6HP18fguHJt13lTQ4Zu0QuKkMPmW195b%2FwoTGuDTi6a9ltC6rBof%2B%2BlaHmR56sym%2BwpjwhMKDRMAFFS%2FxhvuYI15ppigOr7LUNYg%3D%3D; bkng_ap=U2FsdGVkX1%2F73Eh0vzq7M15vCgAMvjGd8lUjrzMRZEi6oGFrMANGiWneaesbIek%2BDgkUWS%2FLRCis%0AO2gdrzQgcA%3D%3D%0A; _pxff_fp=1; _pxff_cfp=1; _pxff_ddtc=1; OptanonConsent=implicitConsentCountry=nonGDPR&implicitConsentDate=1693407758176&isGpcEnabled=0&datestamp=Wed+Aug+30+2023+23%3A41%3A40+GMT%2B0500+(Pakistan+Standard+Time)&version=202305.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=cc22644b-18de-4634-a0a2-b2706418ff02&interactionCount=0&landingPath=https%3A%2F%2Faccount.booking.com%2Fsign-in%3Fop_token%3DEgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg&groups=C0001%3A1%2CC0002%3A1; _px3=eea92ab3a08f069846b674165eb75637fa8bf6c46391e561f81e9f0936bf380a:SNYnx1JZnul+/N/xyY1bSQcH/Rlhl4/m7EN8gquYfUEiRYV62ALlb2FVsT6aPCAD87SFxVVm2Nnobw2igUoa7Q==:1000:q8FIM3vTQAvhtF6/W2Srym/MhQU7buuXAmqnUKAJOmPiggEx2lUcU57l7wYtDPuMTWGfKV7CD0/0OwjCkKntVo4jXjaNR5hby8gvXM1EnFpn+S7drYo3H0ImMabkTIjVkUfEpOaKHB4FgPobLNjRcrw2JlE8ygkBXTo50EsTmJeVxYAmdP5fRBYFhfBYmO8c4Y2r4IIs8Anx1/ayfX7qKw==; _pxde=245a9d65a741d45109da5a44090b7a362e30608299f5aee39e486041ccf0e051:eyJ0aW1lc3RhbXAiOjE2OTM0MjA5MDE5MjEsImZfa2IiOjAsImlwY19pZCI6W119; bkng_ap_sso_session=eyJib29raW5nX2dsb2JhbCI6eyJzZXNzaW9ucyI6W3sic2Vzc2lvbl9yZWZlcmVuY2UiOiJkZDdhNjE3MS02ZjNlLTQ3ZGYtODFlZC1mOWExYTNlMjU4YjciLCJyZWZyZXNoX3Rva2VuIjoiQ0FFU2QxSjFEbW5wMjZWUHZ2WE4xcmlWOTlLWWVDR0U2RVUwX2lCblppdHk4b1c0U2xNRDlUQk5mWXlCRlhDVXZ5TVBVZTJiWndKVWQyQnFFQmNFN09ZNVR4LUdKbnMxUy15TDBUQk9lLWg5MVh2NG9iR2RUN0RWU2twblhBWHh6STg3MkZURk1vN0FKU1ViSFRNN0Y4MXZiVUluODlTZFgwMVUifV0sImRhdGFfc3ViamVjdF9pZCI6IjYyNzJlYmM2LWM2YjktNDUyMy1hN2U4LWRiMGIyMmYwMmM5ZCJ9fQ; bkng_sso_ses=eyJib29raW5nX2dsb2JhbCI6W3siYSI6MSwiaCI6Ik5XMzFwTTZxREhxclppOHVJUHhMWFB0QjJFUVRhN0U3K1d3ZVRZTkFSRkEifV19; aws-waf-token=5b5af35f-a4fe-4280-a4d8-4605a76396ec:BQoAsIKDNCgBAAAA:PRt2qZYLWKxv380l7ys8LzEsl7kDEJZFIdHTtI0/IuenQjW6Nj5dOkLxO9vJu0ZWvNuz3fZQkvrEZBsF1zoYtCJjpZTFwniG2+G4UkOCVKuYLf4yO2ctupLyVYO3MGra8k3+8mqktWryHk8vxOYw1W35b2nR2IvjrRqdVsiF9uYgxoH/sJZpZHgoSPAl/GGd+eq2lZoNxZunDEZ6W3zY4KnguwiwRZMz3M1qkoV1XCf7Z70r0KiLXlC9iQOA"
+							},
+							{
+								"key": "origin",
+								"value": "https://account.booking.com"
+							},
+							{
+								"key": "referer",
+								"value": "https://account.booking.com/sign-in/password?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-booking-client",
+								"value": "ap"
+							},
+							{
+								"key": "x-requested-with",
+								"value": "XMLHttpRequest"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"context\": {\r\n        \"value\": \"UqQBpTyHdPbHmiNGhGduHgm9FfSUCJV_Kx9pevH9_ge3OzDevEeFoSy0--tYpKJTxYEIcCkvnOQ1ie5zmN4pdjqTNU4iHqQ32uwF4PZQzNcXHZ7NBSi0zYrlDBLffCjXjAwV2Q9jmT0hZsiew6tq6nh3QlRsrW2itZDEiZRsIW6vwQGnC0oetOdxs3dJjRCfA7JX6AE1qjuxz7l2uuUg8ZYfZUq2GQg=\"\r\n    },\r\n    \"authenticator\": {\r\n        \"type\": \"AUTHENTICATOR_TYPE__PASSWORD\",\r\n        \"value\": \"Password@123\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "https://account.booking.com/api/identity/authenticate/v1.0/sign_in/password/submit?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg",
+							"protocol": "https",
+							"host": [
+								"account",
+								"booking",
+								"com"
+							],
+							"path": [
+								"api",
+								"identity",
+								"authenticate",
+								"v1.0",
+								"sign_in",
+								"password",
+								"submit"
+							],
+							"query": [
+								{
+									"key": "op_token",
+									"value": "EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login without Params (op_token)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var saved_response = {\r",
+									"    \"redirect_uri\": \"/oauth2/continue?client_id=vO1Kblk7xX9tUn2cpZLS&next=UrYH54PoJXkCmE7eqEoflgF3mRG1XC0xBB9tnWdYHc4m8RR8NNqTFYwww-e4md_Cm24Gq3UPctglYNRssxrnbmj0oeaOaP_m3wdDrSUSqATUPo60WN8zCx8-_6XZV__QsfwE6fJLiv5C1U9EiVRAK8oIe1Uugj_YTjiFUxzW0gNrxUNp12ISULIr2euJFej2ejR_aCPFNmjeYFRfsEcjbguCXDeki-Z3OyNpEYeQG3Tv5NCWKC1nIMw0dYPmu2JCBuaL84g09pOBzNiAxiOrEeRcfefqJNFcjFJ82x_Ba9qmalCLQ-sSj3DG7w61FR4vdgsMx_AQsPd6E49jX-fOro9jXMLTd2QMgU6wQUAfts9VzeIAEbWJqOwjSfroa21GKhgDpduI5nnu2TnIDwIQli_6WAOdJjD0v45zfW1GKyB49hORsqbJ_eY27dD-SB0SNk8EHp5wzgSd0n01cYFGl85m2KbFw7l_yDSuP0p3IWAK9quOlG9DBJoKl3nIW4XcNlH3FxfvgkG73CW6JBgnfzQ4k43cv6R36n6PR1RcFSZulzez5Srv2DCFn2Olmm-82J9C_YmXq-nYHtLgw7ZpnxGg5cmDPrf21IoMibYGvIbTXFK8IYBVA94vbOR4qSkxUvk2pMC_SHi8G1OgHzZ5w72Na8t474_sA1f7WwBJjsmP9JqDhu_Ka3wcHUbn75qMEKPNLyA2Y5eLEyfJDVTWdEUs9KWtMJAmI6-Nl2aWHTr4x4_Qfpei6EivB6QEjT0VWJXwWAGphYWhtUWvzYcklcmEshu71mv3ViUdi9noeBdrXCb32zziL2fPIKHvqOMM3dxEyoCA0JhtXRFGqmrIRwm0dmTHrCpS4xuiOskYg-Lu539RjgDu8LFSqh769CjHlQsZy26y3MAG6NyLKtka4DqlAx7Oh2GfNCUkqAdc_77XQHO7riPfdQvGcqLTvZ_fk33Dqw72w8cNaaPT6J6z8t7p4HyUo9SxSqwJmTC5cHY4lJIc8LTDzfAPFME8Q4KIdpmd31zUVy9GIqxWQxPdQ3M6W6X0z6MCpCB-0i5bfQbkd634PW4NV46u2ROLFjF1XRuvT56myVbevdSiL4BYaRzaqfnmNgrBXxzMtkjUExvtAa5AAwFEFMyI0xN6UXWR4XzXPI9PXyIWaXKr-3_ELtwJK3TV9CQLr9FKtpfAMx_CK8ajC7Zv1OF1a2nfrYt9KXfNoEbL1sBuzpJzzMRbAJnZHjsb4Kh9KAubmO8j3d5bdQKlQ2wYXfQ\",\r",
+									"    \"nextStep\": \"STEP_SUCCESS\",\r",
+									"    \"identifier\": {\r",
+									"        \"type\": \"IDENTIFIER_TYPE__EMAIL\",\r",
+									"        \"value\": \"shahbahram508@gmail.com\"\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.collectionVariables.set(\"redirect_uri\", saved_response.redirect_uri);\r",
+									"\r",
+									"function _replacePropertyValue(objKeys, newVal, object) {\r",
+									"  const newObject = object;\r",
+									"\r",
+									"  for (var key in object) {\r",
+									"    if (objKeys.includes(key)) {\r",
+									"      newObject[key] = newVal;\r",
+									"    } else if (typeof(object[key]) === 'object' || typeof(object[key]) === 'array') {\r",
+									"      newObject[key] = replacePropertyValue(objKeys, newVal, object[key]);\r",
+									"    }\r",
+									"  }\r",
+									"\r",
+									"  return newObject;\r",
+									"}\r",
+									"\r",
+									"function replacePropertyValue(objKeys, newVal, object) {\r",
+									"    if (typeof (object) === 'array') {\r",
+									"        var items = []\r",
+									"        for (var item in object) {\r",
+									"            items.push(_replacePropertyValue(objKeys, newVal, item));\r",
+									"        }\r",
+									"        return items\r",
+									"    } else if (typeof (object) === 'object') {\r",
+									"        return _replacePropertyValue(objKeys, newVal, object);\r",
+									"    } else {\r",
+									"        return object\r",
+									"    }\r",
+									"}\r",
+									"\r",
+									"var response = pm.response.json();\r",
+									"\r",
+									"var keys_to_update = [\"redirect_uri\"];\r",
+									"\r",
+									"delete response.show_action_bar\r",
+									"delete response.show_categories\r",
+									"\r",
+									"var expected_response = replacePropertyValue(keys_to_update, 0, saved_response);\r",
+									"var actual_response = replacePropertyValue(keys_to_update, 0, response);\r",
+									"\r",
+									"pm.test(\"Test data type of the response\", () => {\r",
+									"  pm.expect(pm.response.json()).to.be.an(\"object\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validate schema of response\", () => {\r",
+									"  pm.environment.set(\"expected\", JSON.stringify(expected_response));\r",
+									"  pm.environment.set(\"actual\", JSON.stringify(actual_response));\r",
+									"  pm.expect(expected_response).to.deep.equal(actual_response);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "account.booking.com"
+							},
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "max-age=0"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "px_init=0; cors_js=1; BJS=-; _gid=GA1.2.1703675266.1693407760; pxcts=47d4b64b-4746-11ee-8ddd-59524a7a536e; _pxvid=47d4ab82-4746-11ee-8ddd-aaaaa1bd92fa; bkng_prue=1; _gcl_au=1.1.1146911255.1693407788; _scid=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _pin_unauth=dWlkPVpEUTBNMk16WmprdFl6TmxNUzAwTm1Sa0xUbG1Zamt0TldNd05UTTRNV1kzTW1abA; _sctr=1%7C1693335600000; g_state={\"i_p\":1693414993050,\"i_l\":1}; bkng_ap_lang=en-us; cto_bundle=yK0cGF9xQ2xOcExTM1BjM3hqaDVFdW9Zemp6TWNqOWslMkJjMGpkckhZOW5xWVRUSmt5N080TU45YXc3Y0psMmlISkRDYmV2WU1pNVJwMlZQcHI4dDRHak51UW5Tc2ZUdkFjWGx1TTZyZTA5VEhpZWFpOUJUSHY1aUFQUnNBRVVKM0JJUlg2MFUxcTJ6RzZaMTBaSGZUN1pFN1F5ZyUzRCUzRA; _scid_r=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _derived_epik=dj0yJnU9SlhlU28ycl8xNEg1b0l4RHctUmxVSE5oMFRfeTFTam4mbj1ZV2VZeXlWellTZG5DNC1fenZWUTdnJm09MSZ0PUFBQUFBR1R2YXpzJnJtPTEmcnQ9QUFBQUFHVHZhenMmc3A9Mg; _ga_FPD6YLJCJ7=GS1.1.1693407787.1.1.1693412158.0.0.0; _ga=GA1.2.29860013.1693407760; pcm_consent=consentedAt%3D2023-08-30T16%3A48%3A09.120Z%26countryCode%3DPK%26expiresAt%3D2024-02-26T16%3A48%3A09.120Z%26implicit%3Dfalse%26regulation%3Dnone%26legacyRegulation%3Dnone%26consentId%3D0c32f29a-18cb-4929-b4df-24671b2c58e7%26analytical%3Dtrue%26marketing%3Dtrue; reese84=3:c46FrqlkSnd8Y0i0Iuz/bw==:hh5Hf+vCBe/a+UU9ndO6G/xpPbsrsC5NhND2DUHO01j+cNvOLmlu9BSGpj5z+guabQxFIBcW0gfOtPIoACOvvLnPJQ5oNgsJnd6UfV/WeRg00PiUnnzu31Nx2QGdDdnG9xYBeTnFNL/ey65BePAAWLiUkMqfD3AyXpAp7lIRRAZXdHnDvsnw9JJq+aLLD8sB3kvqAP7PsPGtL2P7dS8s+pZVx6Ph4P8d07tFB0PYIu0zTq0Wy+nWJb73py5HsD8UOcrIP9shbsNwdjnvC/j4aclTGM+axE2c5qvGKFrLaADvKBIu8g+IYuVAbehRl9onyND6Rk6Q0XEqpSp0OtUM1zTkpHuZANr++9Wx3NY6ZvFhCi1RjEIOIjb0gEcX8eR2YulAGYrDruUB+TB4rxp6ZdVXZk9VH0S3g54uBkBYKUhUG2VkviG7ckxOvCUgs4uTk3EmDlQRZz182HbyP4MNvsViQenlqoq1OkDVQjwY5yVAURXeXF9yegMQayoy7fiC:1t0bbP3MDYmrWnEMxpCew/xmP8lsoR/9N9Y6ffLQtNc=; _pxhd=ww6VhM7hZaAjABdcwNoTxHB8beHpoNlFEeyx0WsL%2Fsr518aerBBnVNoV4ZYQtKeLLLgAeyHEQHL3AD1Ila4ovQ%3D%3D%3AcGk2gwSTCSrqxu5sdspqyj9R3YqV7OKsD2r6SPkX1LI7lrokEY732Wgu5F3JQyHzqmTtvFJ%2FkD8vBJ9U7Au9vVeKOaDvwdpe%2FoFvJ3qeznw%3D; bkng_sso_session=e30; bkng_sso_auth=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; bkng_sso_auth_1693420892=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; _gat=1; _uetsid=542b6da0474611ee82db0961c6c94a6c; _uetvid=542bb400474611ee8208356ca10a19c7; lastSeen=1693420898101; bkng=11UmFuZG9tSVYkc2RlIyh9Yaa29%2F3xUOLbbmD9q%2B5pe3Wh6CkJpYLo8RL4PztOsp2tHSoooyIqWJFbky5SvedT0xjRZx%2FJH1cApkyff3REANdnlPcaaW6HP18fguHJt13lTQ4Zu0QuKkMPmW195b%2FwoTGuDTi6a9ltC6rBof%2B%2BlaHmR56sym%2BwpjwhMKDRMAFFS%2FxhvuYI15ppigOr7LUNYg%3D%3D; bkng_ap=U2FsdGVkX1%2F73Eh0vzq7M15vCgAMvjGd8lUjrzMRZEi6oGFrMANGiWneaesbIek%2BDgkUWS%2FLRCis%0AO2gdrzQgcA%3D%3D%0A; _pxff_fp=1; _pxff_cfp=1; _pxff_ddtc=1; OptanonConsent=implicitConsentCountry=nonGDPR&implicitConsentDate=1693407758176&isGpcEnabled=0&datestamp=Wed+Aug+30+2023+23%3A41%3A40+GMT%2B0500+(Pakistan+Standard+Time)&version=202305.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=cc22644b-18de-4634-a0a2-b2706418ff02&interactionCount=0&landingPath=https%3A%2F%2Faccount.booking.com%2Fsign-in%3Fop_token%3DEgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg&groups=C0001%3A1%2CC0002%3A1; _px3=eea92ab3a08f069846b674165eb75637fa8bf6c46391e561f81e9f0936bf380a:SNYnx1JZnul+/N/xyY1bSQcH/Rlhl4/m7EN8gquYfUEiRYV62ALlb2FVsT6aPCAD87SFxVVm2Nnobw2igUoa7Q==:1000:q8FIM3vTQAvhtF6/W2Srym/MhQU7buuXAmqnUKAJOmPiggEx2lUcU57l7wYtDPuMTWGfKV7CD0/0OwjCkKntVo4jXjaNR5hby8gvXM1EnFpn+S7drYo3H0ImMabkTIjVkUfEpOaKHB4FgPobLNjRcrw2JlE8ygkBXTo50EsTmJeVxYAmdP5fRBYFhfBYmO8c4Y2r4IIs8Anx1/ayfX7qKw==; _pxde=245a9d65a741d45109da5a44090b7a362e30608299f5aee39e486041ccf0e051:eyJ0aW1lc3RhbXAiOjE2OTM0MjA5MDE5MjEsImZfa2IiOjAsImlwY19pZCI6W119; bkng_ap_sso_session=eyJib29raW5nX2dsb2JhbCI6eyJzZXNzaW9ucyI6W3sic2Vzc2lvbl9yZWZlcmVuY2UiOiJkZDdhNjE3MS02ZjNlLTQ3ZGYtODFlZC1mOWExYTNlMjU4YjciLCJyZWZyZXNoX3Rva2VuIjoiQ0FFU2QxSjFEbW5wMjZWUHZ2WE4xcmlWOTlLWWVDR0U2RVUwX2lCblppdHk4b1c0U2xNRDlUQk5mWXlCRlhDVXZ5TVBVZTJiWndKVWQyQnFFQmNFN09ZNVR4LUdKbnMxUy15TDBUQk9lLWg5MVh2NG9iR2RUN0RWU2twblhBWHh6STg3MkZURk1vN0FKU1ViSFRNN0Y4MXZiVUluODlTZFgwMVUifV0sImRhdGFfc3ViamVjdF9pZCI6IjYyNzJlYmM2LWM2YjktNDUyMy1hN2U4LWRiMGIyMmYwMmM5ZCJ9fQ; bkng_sso_ses=eyJib29raW5nX2dsb2JhbCI6W3siYSI6MSwiaCI6Ik5XMzFwTTZxREhxclppOHVJUHhMWFB0QjJFUVRhN0U3K1d3ZVRZTkFSRkEifV19; aws-waf-token=5b5af35f-a4fe-4280-a4d8-4605a76396ec:BQoAsIKDNCgBAAAA:PRt2qZYLWKxv380l7ys8LzEsl7kDEJZFIdHTtI0/IuenQjW6Nj5dOkLxO9vJu0ZWvNuz3fZQkvrEZBsF1zoYtCJjpZTFwniG2+G4UkOCVKuYLf4yO2ctupLyVYO3MGra8k3+8mqktWryHk8vxOYw1W35b2nR2IvjrRqdVsiF9uYgxoH/sJZpZHgoSPAl/GGd+eq2lZoNxZunDEZ6W3zY4KnguwiwRZMz3M1qkoV1XCf7Z70r0KiLXlC9iQOA"
+							},
+							{
+								"key": "origin",
+								"value": "https://account.booking.com"
+							},
+							{
+								"key": "referer",
+								"value": "https://account.booking.com/sign-in/password?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-booking-client",
+								"value": "ap"
+							},
+							{
+								"key": "x-requested-with",
+								"value": "XMLHttpRequest"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"context\":{\"value\":\"UqQBpTyHdPbHmiNGhGduHgm9FfSUCJV_Kx9pevH9_ge3OzDevEeFoSy0--tYpKJTxYEIcCkvnOQ1ie5zmN4pdjqTNU4iHqQ32uwF4PZQzNcXHZ7NBSi0zYrlDBLffCjXjAwV2Q9jmT0hZsiew6tq6nh3QlRsrW2itZDEiZRsIW6vwQGnC0oetOdxs3dJjRCfA7JX6AE1qjuxz7l2uuUg8ZYfZUq2GQg=\"},\"authenticator\":{\"type\":\"AUTHENTICATOR_TYPE__PASSWORD\",\"value\":\"Password@123\"}}"
+						},
+						"url": {
+							"raw": "https://account.booking.com/api/identity/authenticate/v1.0/sign_in/password/submit",
+							"protocol": "https",
+							"host": [
+								"account",
+								"booking",
+								"com"
+							],
+							"path": [
+								"api",
+								"identity",
+								"authenticate",
+								"v1.0",
+								"sign_in",
+								"password",
+								"submit"
+							],
+							"query": [
+								{
+									"key": "op_token",
+									"value": "EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login without user agent",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var response = pm.response.json()\r",
+									"\r",
+									"pm.test(\"Test data type of the response\", () => {\r",
+									"  pm.expect(response).to.be.an(\"object\");\r",
+									"});\r",
+									"\r",
+									"var saved_response = {\r",
+									"    \"context\": {\r",
+									"        \"value\": \"UqQBpTyHdPbHmiNGhGduHgm9FfSUCJV_Kx9pevH9_ge3OzDevEeFoSy0--tYpKJTxYEIcCkvnOQ1ie5zmN4pdjqTNU4iHqQ32uwF4PZQzNcXHZ7NBSi0zYrlDBLffCjXjAwV2Q9jmT0hZsiew6tq6nh3QlRsrW2itZDEiZRsIW6vwQGnC0oetOdxs3dJjRCfA7JX6AE1qjuxz7l2uuUg8ZYfZUq2GQg=\"\r",
+									"    },\r",
+									"    \"error\": [\r",
+									"        {\r",
+									"            \"errorDetails\": \"Invalid device id\",\r",
+									"            \"code\": \"ERROR_CODE__INVALID_AUTHENTICATION_CONTEXT\"\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Validate response\", () => {\r",
+									"  pm.expect(response).to.eql(saved_response);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "account.booking.com"
+							},
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "max-age=0"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "px_init=0; cors_js=1; BJS=-; _gid=GA1.2.1703675266.1693407760; pxcts=47d4b64b-4746-11ee-8ddd-59524a7a536e; _pxvid=47d4ab82-4746-11ee-8ddd-aaaaa1bd92fa; bkng_prue=1; _gcl_au=1.1.1146911255.1693407788; _scid=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _pin_unauth=dWlkPVpEUTBNMk16WmprdFl6TmxNUzAwTm1Sa0xUbG1Zamt0TldNd05UTTRNV1kzTW1abA; _sctr=1%7C1693335600000; g_state={\"i_p\":1693414993050,\"i_l\":1}; bkng_ap_lang=en-us; cto_bundle=yK0cGF9xQ2xOcExTM1BjM3hqaDVFdW9Zemp6TWNqOWslMkJjMGpkckhZOW5xWVRUSmt5N080TU45YXc3Y0psMmlISkRDYmV2WU1pNVJwMlZQcHI4dDRHak51UW5Tc2ZUdkFjWGx1TTZyZTA5VEhpZWFpOUJUSHY1aUFQUnNBRVVKM0JJUlg2MFUxcTJ6RzZaMTBaSGZUN1pFN1F5ZyUzRCUzRA; _scid_r=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _derived_epik=dj0yJnU9SlhlU28ycl8xNEg1b0l4RHctUmxVSE5oMFRfeTFTam4mbj1ZV2VZeXlWellTZG5DNC1fenZWUTdnJm09MSZ0PUFBQUFBR1R2YXpzJnJtPTEmcnQ9QUFBQUFHVHZhenMmc3A9Mg; _ga_FPD6YLJCJ7=GS1.1.1693407787.1.1.1693412158.0.0.0; _ga=GA1.2.29860013.1693407760; pcm_consent=consentedAt%3D2023-08-30T16%3A48%3A09.120Z%26countryCode%3DPK%26expiresAt%3D2024-02-26T16%3A48%3A09.120Z%26implicit%3Dfalse%26regulation%3Dnone%26legacyRegulation%3Dnone%26consentId%3D0c32f29a-18cb-4929-b4df-24671b2c58e7%26analytical%3Dtrue%26marketing%3Dtrue; reese84=3:c46FrqlkSnd8Y0i0Iuz/bw==:hh5Hf+vCBe/a+UU9ndO6G/xpPbsrsC5NhND2DUHO01j+cNvOLmlu9BSGpj5z+guabQxFIBcW0gfOtPIoACOvvLnPJQ5oNgsJnd6UfV/WeRg00PiUnnzu31Nx2QGdDdnG9xYBeTnFNL/ey65BePAAWLiUkMqfD3AyXpAp7lIRRAZXdHnDvsnw9JJq+aLLD8sB3kvqAP7PsPGtL2P7dS8s+pZVx6Ph4P8d07tFB0PYIu0zTq0Wy+nWJb73py5HsD8UOcrIP9shbsNwdjnvC/j4aclTGM+axE2c5qvGKFrLaADvKBIu8g+IYuVAbehRl9onyND6Rk6Q0XEqpSp0OtUM1zTkpHuZANr++9Wx3NY6ZvFhCi1RjEIOIjb0gEcX8eR2YulAGYrDruUB+TB4rxp6ZdVXZk9VH0S3g54uBkBYKUhUG2VkviG7ckxOvCUgs4uTk3EmDlQRZz182HbyP4MNvsViQenlqoq1OkDVQjwY5yVAURXeXF9yegMQayoy7fiC:1t0bbP3MDYmrWnEMxpCew/xmP8lsoR/9N9Y6ffLQtNc=; _pxhd=ww6VhM7hZaAjABdcwNoTxHB8beHpoNlFEeyx0WsL%2Fsr518aerBBnVNoV4ZYQtKeLLLgAeyHEQHL3AD1Ila4ovQ%3D%3D%3AcGk2gwSTCSrqxu5sdspqyj9R3YqV7OKsD2r6SPkX1LI7lrokEY732Wgu5F3JQyHzqmTtvFJ%2FkD8vBJ9U7Au9vVeKOaDvwdpe%2FoFvJ3qeznw%3D; bkng_sso_session=e30; bkng_sso_auth=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; bkng_sso_auth_1693420892=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; _gat=1; _uetsid=542b6da0474611ee82db0961c6c94a6c; _uetvid=542bb400474611ee8208356ca10a19c7; lastSeen=1693420898101; bkng=11UmFuZG9tSVYkc2RlIyh9Yaa29%2F3xUOLbbmD9q%2B5pe3Wh6CkJpYLo8RL4PztOsp2tHSoooyIqWJFbky5SvedT0xjRZx%2FJH1cApkyff3REANdnlPcaaW6HP18fguHJt13lTQ4Zu0QuKkMPmW195b%2FwoTGuDTi6a9ltC6rBof%2B%2BlaHmR56sym%2BwpjwhMKDRMAFFS%2FxhvuYI15ppigOr7LUNYg%3D%3D; bkng_ap=U2FsdGVkX1%2F73Eh0vzq7M15vCgAMvjGd8lUjrzMRZEi6oGFrMANGiWneaesbIek%2BDgkUWS%2FLRCis%0AO2gdrzQgcA%3D%3D%0A; _pxff_fp=1; _pxff_cfp=1; _pxff_ddtc=1; OptanonConsent=implicitConsentCountry=nonGDPR&implicitConsentDate=1693407758176&isGpcEnabled=0&datestamp=Wed+Aug+30+2023+23%3A41%3A40+GMT%2B0500+(Pakistan+Standard+Time)&version=202305.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=cc22644b-18de-4634-a0a2-b2706418ff02&interactionCount=0&landingPath=https%3A%2F%2Faccount.booking.com%2Fsign-in%3Fop_token%3DEgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg&groups=C0001%3A1%2CC0002%3A1; _px3=eea92ab3a08f069846b674165eb75637fa8bf6c46391e561f81e9f0936bf380a:SNYnx1JZnul+/N/xyY1bSQcH/Rlhl4/m7EN8gquYfUEiRYV62ALlb2FVsT6aPCAD87SFxVVm2Nnobw2igUoa7Q==:1000:q8FIM3vTQAvhtF6/W2Srym/MhQU7buuXAmqnUKAJOmPiggEx2lUcU57l7wYtDPuMTWGfKV7CD0/0OwjCkKntVo4jXjaNR5hby8gvXM1EnFpn+S7drYo3H0ImMabkTIjVkUfEpOaKHB4FgPobLNjRcrw2JlE8ygkBXTo50EsTmJeVxYAmdP5fRBYFhfBYmO8c4Y2r4IIs8Anx1/ayfX7qKw==; _pxde=245a9d65a741d45109da5a44090b7a362e30608299f5aee39e486041ccf0e051:eyJ0aW1lc3RhbXAiOjE2OTM0MjA5MDE5MjEsImZfa2IiOjAsImlwY19pZCI6W119; bkng_ap_sso_session=eyJib29raW5nX2dsb2JhbCI6eyJzZXNzaW9ucyI6W3sic2Vzc2lvbl9yZWZlcmVuY2UiOiJkZDdhNjE3MS02ZjNlLTQ3ZGYtODFlZC1mOWExYTNlMjU4YjciLCJyZWZyZXNoX3Rva2VuIjoiQ0FFU2QxSjFEbW5wMjZWUHZ2WE4xcmlWOTlLWWVDR0U2RVUwX2lCblppdHk4b1c0U2xNRDlUQk5mWXlCRlhDVXZ5TVBVZTJiWndKVWQyQnFFQmNFN09ZNVR4LUdKbnMxUy15TDBUQk9lLWg5MVh2NG9iR2RUN0RWU2twblhBWHh6STg3MkZURk1vN0FKU1ViSFRNN0Y4MXZiVUluODlTZFgwMVUifV0sImRhdGFfc3ViamVjdF9pZCI6IjYyNzJlYmM2LWM2YjktNDUyMy1hN2U4LWRiMGIyMmYwMmM5ZCJ9fQ; bkng_sso_ses=eyJib29raW5nX2dsb2JhbCI6W3siYSI6MSwiaCI6Ik5XMzFwTTZxREhxclppOHVJUHhMWFB0QjJFUVRhN0U3K1d3ZVRZTkFSRkEifV19; aws-waf-token=5b5af35f-a4fe-4280-a4d8-4605a76396ec:BQoAsIKDNCgBAAAA:PRt2qZYLWKxv380l7ys8LzEsl7kDEJZFIdHTtI0/IuenQjW6Nj5dOkLxO9vJu0ZWvNuz3fZQkvrEZBsF1zoYtCJjpZTFwniG2+G4UkOCVKuYLf4yO2ctupLyVYO3MGra8k3+8mqktWryHk8vxOYw1W35b2nR2IvjrRqdVsiF9uYgxoH/sJZpZHgoSPAl/GGd+eq2lZoNxZunDEZ6W3zY4KnguwiwRZMz3M1qkoV1XCf7Z70r0KiLXlC9iQOA"
+							},
+							{
+								"key": "origin",
+								"value": "https://account.booking.com"
+							},
+							{
+								"key": "referer",
+								"value": "https://account.booking.com/sign-in/password?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36",
+								"disabled": true
+							},
+							{
+								"key": "x-booking-client",
+								"value": "ap"
+							},
+							{
+								"key": "x-requested-with",
+								"value": "XMLHttpRequest"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"context\":{\"value\":\"UqQBpTyHdPbHmiNGhGduHgm9FfSUCJV_Kx9pevH9_ge3OzDevEeFoSy0--tYpKJTxYEIcCkvnOQ1ie5zmN4pdjqTNU4iHqQ32uwF4PZQzNcXHZ7NBSi0zYrlDBLffCjXjAwV2Q9jmT0hZsiew6tq6nh3QlRsrW2itZDEiZRsIW6vwQGnC0oetOdxs3dJjRCfA7JX6AE1qjuxz7l2uuUg8ZYfZUq2GQg=\"},\"authenticator\":{\"type\":\"AUTHENTICATOR_TYPE__PASSWORD\",\"value\":\"Password@123\"}}"
+						},
+						"url": {
+							"raw": "https://account.booking.com/api/identity/authenticate/v1.0/sign_in/password/submit",
+							"protocol": "https",
+							"host": [
+								"account",
+								"booking",
+								"com"
+							],
+							"path": [
+								"api",
+								"identity",
+								"authenticate",
+								"v1.0",
+								"sign_in",
+								"password",
+								"submit"
+							],
+							"query": [
+								{
+									"key": "op_token",
+									"value": "EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login without x-booking-client",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var saved_response = {\r",
+									"    \"context\": {\r",
+									"        \"value\": \"UqQBpTyHdPbHmiNGhGduHgm9FfSUCJV_Kx9pevH9_ge3OzDevEeFoSy0--tYpKJTxYEIcCkvnOQ1ie5zmN4pdjqTNU4iHqQ32uwF4PZQzNcXHZ7NBSi0zYrlDBLffCjXjAwV2Q9jmT0hZsiew6tq6nh3QlRsrW2itZDEiZRsIW6vwQGnC0oetOdxs3dJjRCfA7JX6AE1qjuxz7l2uuUg8ZYfZUq2GQg=\"\r",
+									"    },\r",
+									"    \"error\": [\r",
+									"        {\r",
+									"            \"errorDetails\": \"Missing client_id\",\r",
+									"            \"code\": \"ERROR_CODE__MISSING_REQUIRED_PARAMETER\"\r",
+									"        }\r",
+									"    ]\r",
+									"};\r",
+									"\r",
+									"pm.collectionVariables.set(\"redirect_uri\", saved_response.redirect_uri);\r",
+									"\r",
+									"function _replacePropertyValue(objKeys, newVal, object) {\r",
+									"  const newObject = object;\r",
+									"\r",
+									"  for (var key in object) {\r",
+									"    if (objKeys.includes(key)) {\r",
+									"      newObject[key] = newVal;\r",
+									"    } else if (typeof(object[key]) === 'object' || typeof(object[key]) === 'array') {\r",
+									"      newObject[key] = replacePropertyValue(objKeys, newVal, object[key]);\r",
+									"    }\r",
+									"  }\r",
+									"\r",
+									"  return newObject;\r",
+									"}\r",
+									"\r",
+									"function replacePropertyValue(objKeys, newVal, object) {\r",
+									"    if (typeof (object) === 'array') {\r",
+									"        var items = []\r",
+									"        for (var item in object) {\r",
+									"            items.push(_replacePropertyValue(objKeys, newVal, item));\r",
+									"        }\r",
+									"        return items\r",
+									"    } else if (typeof (object) === 'object') {\r",
+									"        return _replacePropertyValue(objKeys, newVal, object);\r",
+									"    } else {\r",
+									"        return object\r",
+									"    }\r",
+									"}\r",
+									"\r",
+									"var response = pm.response.json();\r",
+									"\r",
+									"var keys_to_update = [\"redirect_uri\"];\r",
+									"\r",
+									"delete response.show_action_bar\r",
+									"delete response.show_categories\r",
+									"\r",
+									"var expected_response = replacePropertyValue(keys_to_update, 0, saved_response);\r",
+									"var actual_response = replacePropertyValue(keys_to_update, 0, response);\r",
+									"\r",
+									"pm.test(\"Test data type of the response\", () => {\r",
+									"  pm.expect(pm.response.json()).to.be.an(\"object\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validate schema of response\", () => {\r",
+									"  pm.environment.set(\"expected\", JSON.stringify(expected_response));\r",
+									"  pm.environment.set(\"actual\", JSON.stringify(actual_response));\r",
+									"  pm.expect(expected_response).to.deep.equal(actual_response);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "account.booking.com"
+							},
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "max-age=0"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "px_init=0; cors_js=1; BJS=-; _gid=GA1.2.1703675266.1693407760; pxcts=47d4b64b-4746-11ee-8ddd-59524a7a536e; _pxvid=47d4ab82-4746-11ee-8ddd-aaaaa1bd92fa; bkng_prue=1; _gcl_au=1.1.1146911255.1693407788; _scid=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _pin_unauth=dWlkPVpEUTBNMk16WmprdFl6TmxNUzAwTm1Sa0xUbG1Zamt0TldNd05UTTRNV1kzTW1abA; _sctr=1%7C1693335600000; g_state={\"i_p\":1693414993050,\"i_l\":1}; bkng_ap_lang=en-us; cto_bundle=yK0cGF9xQ2xOcExTM1BjM3hqaDVFdW9Zemp6TWNqOWslMkJjMGpkckhZOW5xWVRUSmt5N080TU45YXc3Y0psMmlISkRDYmV2WU1pNVJwMlZQcHI4dDRHak51UW5Tc2ZUdkFjWGx1TTZyZTA5VEhpZWFpOUJUSHY1aUFQUnNBRVVKM0JJUlg2MFUxcTJ6RzZaMTBaSGZUN1pFN1F5ZyUzRCUzRA; _scid_r=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _derived_epik=dj0yJnU9SlhlU28ycl8xNEg1b0l4RHctUmxVSE5oMFRfeTFTam4mbj1ZV2VZeXlWellTZG5DNC1fenZWUTdnJm09MSZ0PUFBQUFBR1R2YXpzJnJtPTEmcnQ9QUFBQUFHVHZhenMmc3A9Mg; _ga_FPD6YLJCJ7=GS1.1.1693407787.1.1.1693412158.0.0.0; _ga=GA1.2.29860013.1693407760; pcm_consent=consentedAt%3D2023-08-30T16%3A48%3A09.120Z%26countryCode%3DPK%26expiresAt%3D2024-02-26T16%3A48%3A09.120Z%26implicit%3Dfalse%26regulation%3Dnone%26legacyRegulation%3Dnone%26consentId%3D0c32f29a-18cb-4929-b4df-24671b2c58e7%26analytical%3Dtrue%26marketing%3Dtrue; reese84=3:c46FrqlkSnd8Y0i0Iuz/bw==:hh5Hf+vCBe/a+UU9ndO6G/xpPbsrsC5NhND2DUHO01j+cNvOLmlu9BSGpj5z+guabQxFIBcW0gfOtPIoACOvvLnPJQ5oNgsJnd6UfV/WeRg00PiUnnzu31Nx2QGdDdnG9xYBeTnFNL/ey65BePAAWLiUkMqfD3AyXpAp7lIRRAZXdHnDvsnw9JJq+aLLD8sB3kvqAP7PsPGtL2P7dS8s+pZVx6Ph4P8d07tFB0PYIu0zTq0Wy+nWJb73py5HsD8UOcrIP9shbsNwdjnvC/j4aclTGM+axE2c5qvGKFrLaADvKBIu8g+IYuVAbehRl9onyND6Rk6Q0XEqpSp0OtUM1zTkpHuZANr++9Wx3NY6ZvFhCi1RjEIOIjb0gEcX8eR2YulAGYrDruUB+TB4rxp6ZdVXZk9VH0S3g54uBkBYKUhUG2VkviG7ckxOvCUgs4uTk3EmDlQRZz182HbyP4MNvsViQenlqoq1OkDVQjwY5yVAURXeXF9yegMQayoy7fiC:1t0bbP3MDYmrWnEMxpCew/xmP8lsoR/9N9Y6ffLQtNc=; _pxhd=ww6VhM7hZaAjABdcwNoTxHB8beHpoNlFEeyx0WsL%2Fsr518aerBBnVNoV4ZYQtKeLLLgAeyHEQHL3AD1Ila4ovQ%3D%3D%3AcGk2gwSTCSrqxu5sdspqyj9R3YqV7OKsD2r6SPkX1LI7lrokEY732Wgu5F3JQyHzqmTtvFJ%2FkD8vBJ9U7Au9vVeKOaDvwdpe%2FoFvJ3qeznw%3D; bkng_sso_session=e30; bkng_sso_auth=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; bkng_sso_auth_1693420892=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; _gat=1; _uetsid=542b6da0474611ee82db0961c6c94a6c; _uetvid=542bb400474611ee8208356ca10a19c7; lastSeen=1693420898101; bkng=11UmFuZG9tSVYkc2RlIyh9Yaa29%2F3xUOLbbmD9q%2B5pe3Wh6CkJpYLo8RL4PztOsp2tHSoooyIqWJFbky5SvedT0xjRZx%2FJH1cApkyff3REANdnlPcaaW6HP18fguHJt13lTQ4Zu0QuKkMPmW195b%2FwoTGuDTi6a9ltC6rBof%2B%2BlaHmR56sym%2BwpjwhMKDRMAFFS%2FxhvuYI15ppigOr7LUNYg%3D%3D; bkng_ap=U2FsdGVkX1%2F73Eh0vzq7M15vCgAMvjGd8lUjrzMRZEi6oGFrMANGiWneaesbIek%2BDgkUWS%2FLRCis%0AO2gdrzQgcA%3D%3D%0A; _pxff_fp=1; _pxff_cfp=1; _pxff_ddtc=1; OptanonConsent=implicitConsentCountry=nonGDPR&implicitConsentDate=1693407758176&isGpcEnabled=0&datestamp=Wed+Aug+30+2023+23%3A41%3A40+GMT%2B0500+(Pakistan+Standard+Time)&version=202305.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=cc22644b-18de-4634-a0a2-b2706418ff02&interactionCount=0&landingPath=https%3A%2F%2Faccount.booking.com%2Fsign-in%3Fop_token%3DEgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg&groups=C0001%3A1%2CC0002%3A1; _px3=eea92ab3a08f069846b674165eb75637fa8bf6c46391e561f81e9f0936bf380a:SNYnx1JZnul+/N/xyY1bSQcH/Rlhl4/m7EN8gquYfUEiRYV62ALlb2FVsT6aPCAD87SFxVVm2Nnobw2igUoa7Q==:1000:q8FIM3vTQAvhtF6/W2Srym/MhQU7buuXAmqnUKAJOmPiggEx2lUcU57l7wYtDPuMTWGfKV7CD0/0OwjCkKntVo4jXjaNR5hby8gvXM1EnFpn+S7drYo3H0ImMabkTIjVkUfEpOaKHB4FgPobLNjRcrw2JlE8ygkBXTo50EsTmJeVxYAmdP5fRBYFhfBYmO8c4Y2r4IIs8Anx1/ayfX7qKw==; _pxde=245a9d65a741d45109da5a44090b7a362e30608299f5aee39e486041ccf0e051:eyJ0aW1lc3RhbXAiOjE2OTM0MjA5MDE5MjEsImZfa2IiOjAsImlwY19pZCI6W119; bkng_ap_sso_session=eyJib29raW5nX2dsb2JhbCI6eyJzZXNzaW9ucyI6W3sic2Vzc2lvbl9yZWZlcmVuY2UiOiJkZDdhNjE3MS02ZjNlLTQ3ZGYtODFlZC1mOWExYTNlMjU4YjciLCJyZWZyZXNoX3Rva2VuIjoiQ0FFU2QxSjFEbW5wMjZWUHZ2WE4xcmlWOTlLWWVDR0U2RVUwX2lCblppdHk4b1c0U2xNRDlUQk5mWXlCRlhDVXZ5TVBVZTJiWndKVWQyQnFFQmNFN09ZNVR4LUdKbnMxUy15TDBUQk9lLWg5MVh2NG9iR2RUN0RWU2twblhBWHh6STg3MkZURk1vN0FKU1ViSFRNN0Y4MXZiVUluODlTZFgwMVUifV0sImRhdGFfc3ViamVjdF9pZCI6IjYyNzJlYmM2LWM2YjktNDUyMy1hN2U4LWRiMGIyMmYwMmM5ZCJ9fQ; bkng_sso_ses=eyJib29raW5nX2dsb2JhbCI6W3siYSI6MSwiaCI6Ik5XMzFwTTZxREhxclppOHVJUHhMWFB0QjJFUVRhN0U3K1d3ZVRZTkFSRkEifV19; aws-waf-token=5b5af35f-a4fe-4280-a4d8-4605a76396ec:BQoAsIKDNCgBAAAA:PRt2qZYLWKxv380l7ys8LzEsl7kDEJZFIdHTtI0/IuenQjW6Nj5dOkLxO9vJu0ZWvNuz3fZQkvrEZBsF1zoYtCJjpZTFwniG2+G4UkOCVKuYLf4yO2ctupLyVYO3MGra8k3+8mqktWryHk8vxOYw1W35b2nR2IvjrRqdVsiF9uYgxoH/sJZpZHgoSPAl/GGd+eq2lZoNxZunDEZ6W3zY4KnguwiwRZMz3M1qkoV1XCf7Z70r0KiLXlC9iQOA"
+							},
+							{
+								"key": "origin",
+								"value": "https://account.booking.com"
+							},
+							{
+								"key": "referer",
+								"value": "https://account.booking.com/sign-in/password?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-booking-client",
+								"value": "ap",
+								"disabled": true
+							},
+							{
+								"key": "x-requested-with",
+								"value": "XMLHttpRequest"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"context\": {\r\n        \"value\": \"UqQBpTyHdPbHmiNGhGduHgm9FfSUCJV_Kx9pevH9_ge3OzDevEeFoSy0--tYpKJTxYEIcCkvnOQ1ie5zmN4pdjqTNU4iHqQ32uwF4PZQzNcXHZ7NBSi0zYrlDBLffCjXjAwV2Q9jmT0hZsiew6tq6nh3QlRsrW2itZDEiZRsIW6vwQGnC0oetOdxs3dJjRCfA7JX6AE1qjuxz7l2uuUg8ZYfZUq2GQg=\"\r\n    },\r\n    \"authenticator\": {\r\n        \"type\": \"AUTHENTICATOR_TYPE__PASSWORD\",\r\n        \"value\": \"Password@123\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "https://account.booking.com/api/identity/authenticate/v1.0/sign_in/password/submit",
+							"protocol": "https",
+							"host": [
+								"account",
+								"booking",
+								"com"
+							],
+							"path": [
+								"api",
+								"identity",
+								"authenticate",
+								"v1.0",
+								"sign_in",
+								"password",
+								"submit"
+							],
+							"query": [
+								{
+									"key": "op_token",
+									"value": "EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login without x-requested-with",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", () => {\r",
+									"  pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"var response = pm.response.json()\r",
+									"\r",
+									"pm.test(\"Test data type of the response\", () => {\r",
+									"  pm.expect(response).to.be.an(\"object\");\r",
+									"});\r",
+									"\r",
+									"var saved_response = {\r",
+									"    \"error\": \"Bad request\"\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Validate response\", () => {\r",
+									"  pm.expect(response).to.eql(saved_response);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "account.booking.com"
+							},
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "max-age=0"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "px_init=0; cors_js=1; BJS=-; _gid=GA1.2.1703675266.1693407760; pxcts=47d4b64b-4746-11ee-8ddd-59524a7a536e; _pxvid=47d4ab82-4746-11ee-8ddd-aaaaa1bd92fa; bkng_prue=1; _gcl_au=1.1.1146911255.1693407788; _scid=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _pin_unauth=dWlkPVpEUTBNMk16WmprdFl6TmxNUzAwTm1Sa0xUbG1Zamt0TldNd05UTTRNV1kzTW1abA; _sctr=1%7C1693335600000; g_state={\"i_p\":1693414993050,\"i_l\":1}; bkng_ap_lang=en-us; cto_bundle=yK0cGF9xQ2xOcExTM1BjM3hqaDVFdW9Zemp6TWNqOWslMkJjMGpkckhZOW5xWVRUSmt5N080TU45YXc3Y0psMmlISkRDYmV2WU1pNVJwMlZQcHI4dDRHak51UW5Tc2ZUdkFjWGx1TTZyZTA5VEhpZWFpOUJUSHY1aUFQUnNBRVVKM0JJUlg2MFUxcTJ6RzZaMTBaSGZUN1pFN1F5ZyUzRCUzRA; _scid_r=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _derived_epik=dj0yJnU9SlhlU28ycl8xNEg1b0l4RHctUmxVSE5oMFRfeTFTam4mbj1ZV2VZeXlWellTZG5DNC1fenZWUTdnJm09MSZ0PUFBQUFBR1R2YXpzJnJtPTEmcnQ9QUFBQUFHVHZhenMmc3A9Mg; _ga_FPD6YLJCJ7=GS1.1.1693407787.1.1.1693412158.0.0.0; _ga=GA1.2.29860013.1693407760; pcm_consent=consentedAt%3D2023-08-30T16%3A48%3A09.120Z%26countryCode%3DPK%26expiresAt%3D2024-02-26T16%3A48%3A09.120Z%26implicit%3Dfalse%26regulation%3Dnone%26legacyRegulation%3Dnone%26consentId%3D0c32f29a-18cb-4929-b4df-24671b2c58e7%26analytical%3Dtrue%26marketing%3Dtrue; reese84=3:c46FrqlkSnd8Y0i0Iuz/bw==:hh5Hf+vCBe/a+UU9ndO6G/xpPbsrsC5NhND2DUHO01j+cNvOLmlu9BSGpj5z+guabQxFIBcW0gfOtPIoACOvvLnPJQ5oNgsJnd6UfV/WeRg00PiUnnzu31Nx2QGdDdnG9xYBeTnFNL/ey65BePAAWLiUkMqfD3AyXpAp7lIRRAZXdHnDvsnw9JJq+aLLD8sB3kvqAP7PsPGtL2P7dS8s+pZVx6Ph4P8d07tFB0PYIu0zTq0Wy+nWJb73py5HsD8UOcrIP9shbsNwdjnvC/j4aclTGM+axE2c5qvGKFrLaADvKBIu8g+IYuVAbehRl9onyND6Rk6Q0XEqpSp0OtUM1zTkpHuZANr++9Wx3NY6ZvFhCi1RjEIOIjb0gEcX8eR2YulAGYrDruUB+TB4rxp6ZdVXZk9VH0S3g54uBkBYKUhUG2VkviG7ckxOvCUgs4uTk3EmDlQRZz182HbyP4MNvsViQenlqoq1OkDVQjwY5yVAURXeXF9yegMQayoy7fiC:1t0bbP3MDYmrWnEMxpCew/xmP8lsoR/9N9Y6ffLQtNc=; _pxhd=ww6VhM7hZaAjABdcwNoTxHB8beHpoNlFEeyx0WsL%2Fsr518aerBBnVNoV4ZYQtKeLLLgAeyHEQHL3AD1Ila4ovQ%3D%3D%3AcGk2gwSTCSrqxu5sdspqyj9R3YqV7OKsD2r6SPkX1LI7lrokEY732Wgu5F3JQyHzqmTtvFJ%2FkD8vBJ9U7Au9vVeKOaDvwdpe%2FoFvJ3qeznw%3D; bkng_sso_session=e30; bkng_sso_auth=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; bkng_sso_auth_1693420892=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; _gat=1; _uetsid=542b6da0474611ee82db0961c6c94a6c; _uetvid=542bb400474611ee8208356ca10a19c7; lastSeen=1693420898101; bkng=11UmFuZG9tSVYkc2RlIyh9Yaa29%2F3xUOLbbmD9q%2B5pe3Wh6CkJpYLo8RL4PztOsp2tHSoooyIqWJFbky5SvedT0xjRZx%2FJH1cApkyff3REANdnlPcaaW6HP18fguHJt13lTQ4Zu0QuKkMPmW195b%2FwoTGuDTi6a9ltC6rBof%2B%2BlaHmR56sym%2BwpjwhMKDRMAFFS%2FxhvuYI15ppigOr7LUNYg%3D%3D; bkng_ap=U2FsdGVkX1%2F73Eh0vzq7M15vCgAMvjGd8lUjrzMRZEi6oGFrMANGiWneaesbIek%2BDgkUWS%2FLRCis%0AO2gdrzQgcA%3D%3D%0A; _pxff_fp=1; _pxff_cfp=1; _pxff_ddtc=1; OptanonConsent=implicitConsentCountry=nonGDPR&implicitConsentDate=1693407758176&isGpcEnabled=0&datestamp=Wed+Aug+30+2023+23%3A41%3A40+GMT%2B0500+(Pakistan+Standard+Time)&version=202305.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=cc22644b-18de-4634-a0a2-b2706418ff02&interactionCount=0&landingPath=https%3A%2F%2Faccount.booking.com%2Fsign-in%3Fop_token%3DEgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg&groups=C0001%3A1%2CC0002%3A1; _px3=eea92ab3a08f069846b674165eb75637fa8bf6c46391e561f81e9f0936bf380a:SNYnx1JZnul+/N/xyY1bSQcH/Rlhl4/m7EN8gquYfUEiRYV62ALlb2FVsT6aPCAD87SFxVVm2Nnobw2igUoa7Q==:1000:q8FIM3vTQAvhtF6/W2Srym/MhQU7buuXAmqnUKAJOmPiggEx2lUcU57l7wYtDPuMTWGfKV7CD0/0OwjCkKntVo4jXjaNR5hby8gvXM1EnFpn+S7drYo3H0ImMabkTIjVkUfEpOaKHB4FgPobLNjRcrw2JlE8ygkBXTo50EsTmJeVxYAmdP5fRBYFhfBYmO8c4Y2r4IIs8Anx1/ayfX7qKw==; _pxde=245a9d65a741d45109da5a44090b7a362e30608299f5aee39e486041ccf0e051:eyJ0aW1lc3RhbXAiOjE2OTM0MjA5MDE5MjEsImZfa2IiOjAsImlwY19pZCI6W119; bkng_ap_sso_session=eyJib29raW5nX2dsb2JhbCI6eyJzZXNzaW9ucyI6W3sic2Vzc2lvbl9yZWZlcmVuY2UiOiJkZDdhNjE3MS02ZjNlLTQ3ZGYtODFlZC1mOWExYTNlMjU4YjciLCJyZWZyZXNoX3Rva2VuIjoiQ0FFU2QxSjFEbW5wMjZWUHZ2WE4xcmlWOTlLWWVDR0U2RVUwX2lCblppdHk4b1c0U2xNRDlUQk5mWXlCRlhDVXZ5TVBVZTJiWndKVWQyQnFFQmNFN09ZNVR4LUdKbnMxUy15TDBUQk9lLWg5MVh2NG9iR2RUN0RWU2twblhBWHh6STg3MkZURk1vN0FKU1ViSFRNN0Y4MXZiVUluODlTZFgwMVUifV0sImRhdGFfc3ViamVjdF9pZCI6IjYyNzJlYmM2LWM2YjktNDUyMy1hN2U4LWRiMGIyMmYwMmM5ZCJ9fQ; bkng_sso_ses=eyJib29raW5nX2dsb2JhbCI6W3siYSI6MSwiaCI6Ik5XMzFwTTZxREhxclppOHVJUHhMWFB0QjJFUVRhN0U3K1d3ZVRZTkFSRkEifV19; aws-waf-token=5b5af35f-a4fe-4280-a4d8-4605a76396ec:BQoAsIKDNCgBAAAA:PRt2qZYLWKxv380l7ys8LzEsl7kDEJZFIdHTtI0/IuenQjW6Nj5dOkLxO9vJu0ZWvNuz3fZQkvrEZBsF1zoYtCJjpZTFwniG2+G4UkOCVKuYLf4yO2ctupLyVYO3MGra8k3+8mqktWryHk8vxOYw1W35b2nR2IvjrRqdVsiF9uYgxoH/sJZpZHgoSPAl/GGd+eq2lZoNxZunDEZ6W3zY4KnguwiwRZMz3M1qkoV1XCf7Z70r0KiLXlC9iQOA"
+							},
+							{
+								"key": "origin",
+								"value": "https://account.booking.com"
+							},
+							{
+								"key": "referer",
+								"value": "https://account.booking.com/sign-in/password?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-booking-client",
+								"value": "ap"
+							},
+							{
+								"key": "x-requested-with",
+								"value": "XMLHttpRequest",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"context\": {\r\n        \"value\": \"UqQBpTyHdPbHmiNGhGduHgm9FfSUCJV_Kx9pevH9_ge3OzDevEeFoSy0--tYpKJTxYEIcCkvnOQ1ie5zmN4pdjqTNU4iHqQ32uwF4PZQzNcXHZ7NBSi0zYrlDBLffCjXjAwV2Q9jmT0hZsiew6tq6nh3QlRsrW2itZDEiZRsIW6vwQGnC0oetOdxs3dJjRCfA7JX6AE1qjuxz7l2uuUg8ZYfZUq2GQg=\"\r\n    },\r\n    \"authenticator\": {\r\n        \"type\": \"AUTHENTICATOR_TYPE__PASSWORD\",\r\n        \"value\": \"Password@123\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "https://account.booking.com/api/identity/authenticate/v1.0/sign_in/password/submit?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg",
+							"protocol": "https",
+							"host": [
+								"account",
+								"booking",
+								"com"
+							],
+							"path": [
+								"api",
+								"identity",
+								"authenticate",
+								"v1.0",
+								"sign_in",
+								"password",
+								"submit"
+							],
+							"query": [
+								{
+									"key": "op_token",
+									"value": "EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login without body",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", () => {\r",
+									"  pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"var response = pm.response.json()\r",
+									"\r",
+									"pm.test(\"Test data type of the response\", () => {\r",
+									"  pm.expect(response).to.be.an(\"object\");\r",
+									"});\r",
+									"\r",
+									"var saved_response = {\r",
+									"    \"validation_result\": [\r",
+									"        {\r",
+									"            \"function\": \"post_/api/identity/authenticate/v1.0/sign_in/password/submit_v1\",\r",
+									"            \"value\": null,\r",
+									"            \"description\": \"body is required\",\r",
+									"            \"parameter\": \"body\",\r",
+									"            \"missing\": 1\r",
+									"        }\r",
+									"    ],\r",
+									"    \"result\": \"failure\"\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Validate response\", () => {\r",
+									"  pm.expect(response).to.eql(saved_response);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "account.booking.com"
+							},
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "max-age=0"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "px_init=0; cors_js=1; BJS=-; _gid=GA1.2.1703675266.1693407760; pxcts=47d4b64b-4746-11ee-8ddd-59524a7a536e; _pxvid=47d4ab82-4746-11ee-8ddd-aaaaa1bd92fa; bkng_prue=1; _gcl_au=1.1.1146911255.1693407788; _scid=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _pin_unauth=dWlkPVpEUTBNMk16WmprdFl6TmxNUzAwTm1Sa0xUbG1Zamt0TldNd05UTTRNV1kzTW1abA; _sctr=1%7C1693335600000; g_state={\"i_p\":1693414993050,\"i_l\":1}; bkng_ap_lang=en-us; cto_bundle=yK0cGF9xQ2xOcExTM1BjM3hqaDVFdW9Zemp6TWNqOWslMkJjMGpkckhZOW5xWVRUSmt5N080TU45YXc3Y0psMmlISkRDYmV2WU1pNVJwMlZQcHI4dDRHak51UW5Tc2ZUdkFjWGx1TTZyZTA5VEhpZWFpOUJUSHY1aUFQUnNBRVVKM0JJUlg2MFUxcTJ6RzZaMTBaSGZUN1pFN1F5ZyUzRCUzRA; _scid_r=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _derived_epik=dj0yJnU9SlhlU28ycl8xNEg1b0l4RHctUmxVSE5oMFRfeTFTam4mbj1ZV2VZeXlWellTZG5DNC1fenZWUTdnJm09MSZ0PUFBQUFBR1R2YXpzJnJtPTEmcnQ9QUFBQUFHVHZhenMmc3A9Mg; _ga_FPD6YLJCJ7=GS1.1.1693407787.1.1.1693412158.0.0.0; _ga=GA1.2.29860013.1693407760; pcm_consent=consentedAt%3D2023-08-30T16%3A48%3A09.120Z%26countryCode%3DPK%26expiresAt%3D2024-02-26T16%3A48%3A09.120Z%26implicit%3Dfalse%26regulation%3Dnone%26legacyRegulation%3Dnone%26consentId%3D0c32f29a-18cb-4929-b4df-24671b2c58e7%26analytical%3Dtrue%26marketing%3Dtrue; reese84=3:c46FrqlkSnd8Y0i0Iuz/bw==:hh5Hf+vCBe/a+UU9ndO6G/xpPbsrsC5NhND2DUHO01j+cNvOLmlu9BSGpj5z+guabQxFIBcW0gfOtPIoACOvvLnPJQ5oNgsJnd6UfV/WeRg00PiUnnzu31Nx2QGdDdnG9xYBeTnFNL/ey65BePAAWLiUkMqfD3AyXpAp7lIRRAZXdHnDvsnw9JJq+aLLD8sB3kvqAP7PsPGtL2P7dS8s+pZVx6Ph4P8d07tFB0PYIu0zTq0Wy+nWJb73py5HsD8UOcrIP9shbsNwdjnvC/j4aclTGM+axE2c5qvGKFrLaADvKBIu8g+IYuVAbehRl9onyND6Rk6Q0XEqpSp0OtUM1zTkpHuZANr++9Wx3NY6ZvFhCi1RjEIOIjb0gEcX8eR2YulAGYrDruUB+TB4rxp6ZdVXZk9VH0S3g54uBkBYKUhUG2VkviG7ckxOvCUgs4uTk3EmDlQRZz182HbyP4MNvsViQenlqoq1OkDVQjwY5yVAURXeXF9yegMQayoy7fiC:1t0bbP3MDYmrWnEMxpCew/xmP8lsoR/9N9Y6ffLQtNc=; _pxhd=ww6VhM7hZaAjABdcwNoTxHB8beHpoNlFEeyx0WsL%2Fsr518aerBBnVNoV4ZYQtKeLLLgAeyHEQHL3AD1Ila4ovQ%3D%3D%3AcGk2gwSTCSrqxu5sdspqyj9R3YqV7OKsD2r6SPkX1LI7lrokEY732Wgu5F3JQyHzqmTtvFJ%2FkD8vBJ9U7Au9vVeKOaDvwdpe%2FoFvJ3qeznw%3D; bkng_sso_session=e30; bkng_sso_auth=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; bkng_sso_auth_1693420892=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; _gat=1; _uetsid=542b6da0474611ee82db0961c6c94a6c; _uetvid=542bb400474611ee8208356ca10a19c7; lastSeen=1693420898101; bkng=11UmFuZG9tSVYkc2RlIyh9Yaa29%2F3xUOLbbmD9q%2B5pe3Wh6CkJpYLo8RL4PztOsp2tHSoooyIqWJFbky5SvedT0xjRZx%2FJH1cApkyff3REANdnlPcaaW6HP18fguHJt13lTQ4Zu0QuKkMPmW195b%2FwoTGuDTi6a9ltC6rBof%2B%2BlaHmR56sym%2BwpjwhMKDRMAFFS%2FxhvuYI15ppigOr7LUNYg%3D%3D; bkng_ap=U2FsdGVkX1%2F73Eh0vzq7M15vCgAMvjGd8lUjrzMRZEi6oGFrMANGiWneaesbIek%2BDgkUWS%2FLRCis%0AO2gdrzQgcA%3D%3D%0A; _pxff_fp=1; _pxff_cfp=1; _pxff_ddtc=1; OptanonConsent=implicitConsentCountry=nonGDPR&implicitConsentDate=1693407758176&isGpcEnabled=0&datestamp=Wed+Aug+30+2023+23%3A41%3A40+GMT%2B0500+(Pakistan+Standard+Time)&version=202305.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=cc22644b-18de-4634-a0a2-b2706418ff02&interactionCount=0&landingPath=https%3A%2F%2Faccount.booking.com%2Fsign-in%3Fop_token%3DEgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg&groups=C0001%3A1%2CC0002%3A1; _px3=eea92ab3a08f069846b674165eb75637fa8bf6c46391e561f81e9f0936bf380a:SNYnx1JZnul+/N/xyY1bSQcH/Rlhl4/m7EN8gquYfUEiRYV62ALlb2FVsT6aPCAD87SFxVVm2Nnobw2igUoa7Q==:1000:q8FIM3vTQAvhtF6/W2Srym/MhQU7buuXAmqnUKAJOmPiggEx2lUcU57l7wYtDPuMTWGfKV7CD0/0OwjCkKntVo4jXjaNR5hby8gvXM1EnFpn+S7drYo3H0ImMabkTIjVkUfEpOaKHB4FgPobLNjRcrw2JlE8ygkBXTo50EsTmJeVxYAmdP5fRBYFhfBYmO8c4Y2r4IIs8Anx1/ayfX7qKw==; _pxde=245a9d65a741d45109da5a44090b7a362e30608299f5aee39e486041ccf0e051:eyJ0aW1lc3RhbXAiOjE2OTM0MjA5MDE5MjEsImZfa2IiOjAsImlwY19pZCI6W119; bkng_ap_sso_session=eyJib29raW5nX2dsb2JhbCI6eyJzZXNzaW9ucyI6W3sic2Vzc2lvbl9yZWZlcmVuY2UiOiJkZDdhNjE3MS02ZjNlLTQ3ZGYtODFlZC1mOWExYTNlMjU4YjciLCJyZWZyZXNoX3Rva2VuIjoiQ0FFU2QxSjFEbW5wMjZWUHZ2WE4xcmlWOTlLWWVDR0U2RVUwX2lCblppdHk4b1c0U2xNRDlUQk5mWXlCRlhDVXZ5TVBVZTJiWndKVWQyQnFFQmNFN09ZNVR4LUdKbnMxUy15TDBUQk9lLWg5MVh2NG9iR2RUN0RWU2twblhBWHh6STg3MkZURk1vN0FKU1ViSFRNN0Y4MXZiVUluODlTZFgwMVUifV0sImRhdGFfc3ViamVjdF9pZCI6IjYyNzJlYmM2LWM2YjktNDUyMy1hN2U4LWRiMGIyMmYwMmM5ZCJ9fQ; bkng_sso_ses=eyJib29raW5nX2dsb2JhbCI6W3siYSI6MSwiaCI6Ik5XMzFwTTZxREhxclppOHVJUHhMWFB0QjJFUVRhN0U3K1d3ZVRZTkFSRkEifV19; aws-waf-token=5b5af35f-a4fe-4280-a4d8-4605a76396ec:BQoAsIKDNCgBAAAA:PRt2qZYLWKxv380l7ys8LzEsl7kDEJZFIdHTtI0/IuenQjW6Nj5dOkLxO9vJu0ZWvNuz3fZQkvrEZBsF1zoYtCJjpZTFwniG2+G4UkOCVKuYLf4yO2ctupLyVYO3MGra8k3+8mqktWryHk8vxOYw1W35b2nR2IvjrRqdVsiF9uYgxoH/sJZpZHgoSPAl/GGd+eq2lZoNxZunDEZ6W3zY4KnguwiwRZMz3M1qkoV1XCf7Z70r0KiLXlC9iQOA"
+							},
+							{
+								"key": "origin",
+								"value": "https://account.booking.com"
+							},
+							{
+								"key": "referer",
+								"value": "https://account.booking.com/sign-in/password?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-booking-client",
+								"value": "ap"
+							},
+							{
+								"key": "x-requested-with",
+								"value": "XMLHttpRequest"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://account.booking.com/api/identity/authenticate/v1.0/sign_in/password/submit?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg",
+							"protocol": "https",
+							"host": [
+								"account",
+								"booking",
+								"com"
+							],
+							"path": [
+								"api",
+								"identity",
+								"authenticate",
+								"v1.0",
+								"sign_in",
+								"password",
+								"submit"
+							],
+							"query": [
+								{
+									"key": "op_token",
+									"value": "EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login without body Value",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var response = pm.response.json()\r",
+									"\r",
+									"pm.test(\"Test data type of the response\", () => {\r",
+									"  pm.expect(response).to.be.an(\"object\");\r",
+									"});\r",
+									"\r",
+									"var saved_response = {\r",
+									"    \"context\": {},\r",
+									"    \"error\": [\r",
+									"        {\r",
+									"            \"code\": \"ERROR_CODE__INVALID_AUTHENTICATION_CONTEXT\",\r",
+									"            \"errorDetails\": \"Invalid authentication context\"\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Validate response\", () => {\r",
+									"  pm.expect(response).to.eql(saved_response);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "account.booking.com"
+							},
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "max-age=0"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "px_init=0; cors_js=1; BJS=-; _gid=GA1.2.1703675266.1693407760; pxcts=47d4b64b-4746-11ee-8ddd-59524a7a536e; _pxvid=47d4ab82-4746-11ee-8ddd-aaaaa1bd92fa; bkng_prue=1; _gcl_au=1.1.1146911255.1693407788; _scid=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _pin_unauth=dWlkPVpEUTBNMk16WmprdFl6TmxNUzAwTm1Sa0xUbG1Zamt0TldNd05UTTRNV1kzTW1abA; _sctr=1%7C1693335600000; g_state={\"i_p\":1693414993050,\"i_l\":1}; bkng_ap_lang=en-us; cto_bundle=yK0cGF9xQ2xOcExTM1BjM3hqaDVFdW9Zemp6TWNqOWslMkJjMGpkckhZOW5xWVRUSmt5N080TU45YXc3Y0psMmlISkRDYmV2WU1pNVJwMlZQcHI4dDRHak51UW5Tc2ZUdkFjWGx1TTZyZTA5VEhpZWFpOUJUSHY1aUFQUnNBRVVKM0JJUlg2MFUxcTJ6RzZaMTBaSGZUN1pFN1F5ZyUzRCUzRA; _scid_r=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _derived_epik=dj0yJnU9SlhlU28ycl8xNEg1b0l4RHctUmxVSE5oMFRfeTFTam4mbj1ZV2VZeXlWellTZG5DNC1fenZWUTdnJm09MSZ0PUFBQUFBR1R2YXpzJnJtPTEmcnQ9QUFBQUFHVHZhenMmc3A9Mg; _ga_FPD6YLJCJ7=GS1.1.1693407787.1.1.1693412158.0.0.0; _ga=GA1.2.29860013.1693407760; pcm_consent=consentedAt%3D2023-08-30T16%3A48%3A09.120Z%26countryCode%3DPK%26expiresAt%3D2024-02-26T16%3A48%3A09.120Z%26implicit%3Dfalse%26regulation%3Dnone%26legacyRegulation%3Dnone%26consentId%3D0c32f29a-18cb-4929-b4df-24671b2c58e7%26analytical%3Dtrue%26marketing%3Dtrue; reese84=3:c46FrqlkSnd8Y0i0Iuz/bw==:hh5Hf+vCBe/a+UU9ndO6G/xpPbsrsC5NhND2DUHO01j+cNvOLmlu9BSGpj5z+guabQxFIBcW0gfOtPIoACOvvLnPJQ5oNgsJnd6UfV/WeRg00PiUnnzu31Nx2QGdDdnG9xYBeTnFNL/ey65BePAAWLiUkMqfD3AyXpAp7lIRRAZXdHnDvsnw9JJq+aLLD8sB3kvqAP7PsPGtL2P7dS8s+pZVx6Ph4P8d07tFB0PYIu0zTq0Wy+nWJb73py5HsD8UOcrIP9shbsNwdjnvC/j4aclTGM+axE2c5qvGKFrLaADvKBIu8g+IYuVAbehRl9onyND6Rk6Q0XEqpSp0OtUM1zTkpHuZANr++9Wx3NY6ZvFhCi1RjEIOIjb0gEcX8eR2YulAGYrDruUB+TB4rxp6ZdVXZk9VH0S3g54uBkBYKUhUG2VkviG7ckxOvCUgs4uTk3EmDlQRZz182HbyP4MNvsViQenlqoq1OkDVQjwY5yVAURXeXF9yegMQayoy7fiC:1t0bbP3MDYmrWnEMxpCew/xmP8lsoR/9N9Y6ffLQtNc=; _pxhd=ww6VhM7hZaAjABdcwNoTxHB8beHpoNlFEeyx0WsL%2Fsr518aerBBnVNoV4ZYQtKeLLLgAeyHEQHL3AD1Ila4ovQ%3D%3D%3AcGk2gwSTCSrqxu5sdspqyj9R3YqV7OKsD2r6SPkX1LI7lrokEY732Wgu5F3JQyHzqmTtvFJ%2FkD8vBJ9U7Au9vVeKOaDvwdpe%2FoFvJ3qeznw%3D; bkng_sso_session=e30; bkng_sso_auth=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; bkng_sso_auth_1693420892=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; _gat=1; _uetsid=542b6da0474611ee82db0961c6c94a6c; _uetvid=542bb400474611ee8208356ca10a19c7; lastSeen=1693420898101; bkng=11UmFuZG9tSVYkc2RlIyh9Yaa29%2F3xUOLbbmD9q%2B5pe3Wh6CkJpYLo8RL4PztOsp2tHSoooyIqWJFbky5SvedT0xjRZx%2FJH1cApkyff3REANdnlPcaaW6HP18fguHJt13lTQ4Zu0QuKkMPmW195b%2FwoTGuDTi6a9ltC6rBof%2B%2BlaHmR56sym%2BwpjwhMKDRMAFFS%2FxhvuYI15ppigOr7LUNYg%3D%3D; bkng_ap=U2FsdGVkX1%2F73Eh0vzq7M15vCgAMvjGd8lUjrzMRZEi6oGFrMANGiWneaesbIek%2BDgkUWS%2FLRCis%0AO2gdrzQgcA%3D%3D%0A; _pxff_fp=1; _pxff_cfp=1; _pxff_ddtc=1; OptanonConsent=implicitConsentCountry=nonGDPR&implicitConsentDate=1693407758176&isGpcEnabled=0&datestamp=Wed+Aug+30+2023+23%3A41%3A40+GMT%2B0500+(Pakistan+Standard+Time)&version=202305.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=cc22644b-18de-4634-a0a2-b2706418ff02&interactionCount=0&landingPath=https%3A%2F%2Faccount.booking.com%2Fsign-in%3Fop_token%3DEgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg&groups=C0001%3A1%2CC0002%3A1; _px3=eea92ab3a08f069846b674165eb75637fa8bf6c46391e561f81e9f0936bf380a:SNYnx1JZnul+/N/xyY1bSQcH/Rlhl4/m7EN8gquYfUEiRYV62ALlb2FVsT6aPCAD87SFxVVm2Nnobw2igUoa7Q==:1000:q8FIM3vTQAvhtF6/W2Srym/MhQU7buuXAmqnUKAJOmPiggEx2lUcU57l7wYtDPuMTWGfKV7CD0/0OwjCkKntVo4jXjaNR5hby8gvXM1EnFpn+S7drYo3H0ImMabkTIjVkUfEpOaKHB4FgPobLNjRcrw2JlE8ygkBXTo50EsTmJeVxYAmdP5fRBYFhfBYmO8c4Y2r4IIs8Anx1/ayfX7qKw==; _pxde=245a9d65a741d45109da5a44090b7a362e30608299f5aee39e486041ccf0e051:eyJ0aW1lc3RhbXAiOjE2OTM0MjA5MDE5MjEsImZfa2IiOjAsImlwY19pZCI6W119; bkng_ap_sso_session=eyJib29raW5nX2dsb2JhbCI6eyJzZXNzaW9ucyI6W3sic2Vzc2lvbl9yZWZlcmVuY2UiOiJkZDdhNjE3MS02ZjNlLTQ3ZGYtODFlZC1mOWExYTNlMjU4YjciLCJyZWZyZXNoX3Rva2VuIjoiQ0FFU2QxSjFEbW5wMjZWUHZ2WE4xcmlWOTlLWWVDR0U2RVUwX2lCblppdHk4b1c0U2xNRDlUQk5mWXlCRlhDVXZ5TVBVZTJiWndKVWQyQnFFQmNFN09ZNVR4LUdKbnMxUy15TDBUQk9lLWg5MVh2NG9iR2RUN0RWU2twblhBWHh6STg3MkZURk1vN0FKU1ViSFRNN0Y4MXZiVUluODlTZFgwMVUifV0sImRhdGFfc3ViamVjdF9pZCI6IjYyNzJlYmM2LWM2YjktNDUyMy1hN2U4LWRiMGIyMmYwMmM5ZCJ9fQ; bkng_sso_ses=eyJib29raW5nX2dsb2JhbCI6W3siYSI6MSwiaCI6Ik5XMzFwTTZxREhxclppOHVJUHhMWFB0QjJFUVRhN0U3K1d3ZVRZTkFSRkEifV19; aws-waf-token=5b5af35f-a4fe-4280-a4d8-4605a76396ec:BQoAsIKDNCgBAAAA:PRt2qZYLWKxv380l7ys8LzEsl7kDEJZFIdHTtI0/IuenQjW6Nj5dOkLxO9vJu0ZWvNuz3fZQkvrEZBsF1zoYtCJjpZTFwniG2+G4UkOCVKuYLf4yO2ctupLyVYO3MGra8k3+8mqktWryHk8vxOYw1W35b2nR2IvjrRqdVsiF9uYgxoH/sJZpZHgoSPAl/GGd+eq2lZoNxZunDEZ6W3zY4KnguwiwRZMz3M1qkoV1XCf7Z70r0KiLXlC9iQOA"
+							},
+							{
+								"key": "origin",
+								"value": "https://account.booking.com"
+							},
+							{
+								"key": "referer",
+								"value": "https://account.booking.com/sign-in/password?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-booking-client",
+								"value": "ap"
+							},
+							{
+								"key": "x-requested-with",
+								"value": "XMLHttpRequest"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"context\": {\r\n        \r\n    },\r\n    \"authenticator\": {\r\n        \"type\": \"AUTHENTICATOR_TYPE__PASSWORD\",\r\n        \"value\": \"Password@123\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "https://account.booking.com/api/identity/authenticate/v1.0/sign_in/password/submit?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg",
+							"protocol": "https",
+							"host": [
+								"account",
+								"booking",
+								"com"
+							],
+							"path": [
+								"api",
+								"identity",
+								"authenticate",
+								"v1.0",
+								"sign_in",
+								"password",
+								"submit"
+							],
+							"query": [
+								{
+									"key": "op_token",
+									"value": "EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login without wrong body value",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var response = pm.response.json()\r",
+									"\r",
+									"pm.test(\"Test data type of the response\", () => {\r",
+									"  pm.expect(response).to.be.an(\"object\");\r",
+									"});\r",
+									"\r",
+									"var saved_response = {\r",
+									"    \"error\": [\r",
+									"        {\r",
+									"            \"code\": \"ERROR_CODE__INVALID_AUTHENTICATION_CONTEXT\",\r",
+									"            \"errorDetails\": \"Invalid context: failed to deserialize\"\r",
+									"        }\r",
+									"    ],\r",
+									"    \"context\": {\r",
+									"        \"value\": \"UqQBpTyHdPbHmiNGhGduHgm9FfSUCJV_Kx9pevH9_ge3OzDevEeFoSy0--tYpKJTxYEIcCkvnOQ1ie5zmN4pdjqTNU4iHqQ32uwF4PZQzNcXHZ7NBSi0zYrlDBLffCjXjAwV2Q9jmT0hZsiew6tq6nh3QlRsrW2itZD\"\r",
+									"    }\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Validate response\", () => {\r",
+									"  pm.expect(response).to.eql(saved_response);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "account.booking.com"
+							},
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "max-age=0"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "px_init=0; cors_js=1; BJS=-; _gid=GA1.2.1703675266.1693407760; pxcts=47d4b64b-4746-11ee-8ddd-59524a7a536e; _pxvid=47d4ab82-4746-11ee-8ddd-aaaaa1bd92fa; bkng_prue=1; _gcl_au=1.1.1146911255.1693407788; _scid=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _pin_unauth=dWlkPVpEUTBNMk16WmprdFl6TmxNUzAwTm1Sa0xUbG1Zamt0TldNd05UTTRNV1kzTW1abA; _sctr=1%7C1693335600000; g_state={\"i_p\":1693414993050,\"i_l\":1}; bkng_ap_lang=en-us; cto_bundle=yK0cGF9xQ2xOcExTM1BjM3hqaDVFdW9Zemp6TWNqOWslMkJjMGpkckhZOW5xWVRUSmt5N080TU45YXc3Y0psMmlISkRDYmV2WU1pNVJwMlZQcHI4dDRHak51UW5Tc2ZUdkFjWGx1TTZyZTA5VEhpZWFpOUJUSHY1aUFQUnNBRVVKM0JJUlg2MFUxcTJ6RzZaMTBaSGZUN1pFN1F5ZyUzRCUzRA; _scid_r=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _derived_epik=dj0yJnU9SlhlU28ycl8xNEg1b0l4RHctUmxVSE5oMFRfeTFTam4mbj1ZV2VZeXlWellTZG5DNC1fenZWUTdnJm09MSZ0PUFBQUFBR1R2YXpzJnJtPTEmcnQ9QUFBQUFHVHZhenMmc3A9Mg; _ga_FPD6YLJCJ7=GS1.1.1693407787.1.1.1693412158.0.0.0; _ga=GA1.2.29860013.1693407760; pcm_consent=consentedAt%3D2023-08-30T16%3A48%3A09.120Z%26countryCode%3DPK%26expiresAt%3D2024-02-26T16%3A48%3A09.120Z%26implicit%3Dfalse%26regulation%3Dnone%26legacyRegulation%3Dnone%26consentId%3D0c32f29a-18cb-4929-b4df-24671b2c58e7%26analytical%3Dtrue%26marketing%3Dtrue; reese84=3:c46FrqlkSnd8Y0i0Iuz/bw==:hh5Hf+vCBe/a+UU9ndO6G/xpPbsrsC5NhND2DUHO01j+cNvOLmlu9BSGpj5z+guabQxFIBcW0gfOtPIoACOvvLnPJQ5oNgsJnd6UfV/WeRg00PiUnnzu31Nx2QGdDdnG9xYBeTnFNL/ey65BePAAWLiUkMqfD3AyXpAp7lIRRAZXdHnDvsnw9JJq+aLLD8sB3kvqAP7PsPGtL2P7dS8s+pZVx6Ph4P8d07tFB0PYIu0zTq0Wy+nWJb73py5HsD8UOcrIP9shbsNwdjnvC/j4aclTGM+axE2c5qvGKFrLaADvKBIu8g+IYuVAbehRl9onyND6Rk6Q0XEqpSp0OtUM1zTkpHuZANr++9Wx3NY6ZvFhCi1RjEIOIjb0gEcX8eR2YulAGYrDruUB+TB4rxp6ZdVXZk9VH0S3g54uBkBYKUhUG2VkviG7ckxOvCUgs4uTk3EmDlQRZz182HbyP4MNvsViQenlqoq1OkDVQjwY5yVAURXeXF9yegMQayoy7fiC:1t0bbP3MDYmrWnEMxpCew/xmP8lsoR/9N9Y6ffLQtNc=; _pxhd=ww6VhM7hZaAjABdcwNoTxHB8beHpoNlFEeyx0WsL%2Fsr518aerBBnVNoV4ZYQtKeLLLgAeyHEQHL3AD1Ila4ovQ%3D%3D%3AcGk2gwSTCSrqxu5sdspqyj9R3YqV7OKsD2r6SPkX1LI7lrokEY732Wgu5F3JQyHzqmTtvFJ%2FkD8vBJ9U7Au9vVeKOaDvwdpe%2FoFvJ3qeznw%3D; bkng_sso_session=e30; bkng_sso_auth=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; bkng_sso_auth_1693420892=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; _gat=1; _uetsid=542b6da0474611ee82db0961c6c94a6c; _uetvid=542bb400474611ee8208356ca10a19c7; lastSeen=1693420898101; bkng=11UmFuZG9tSVYkc2RlIyh9Yaa29%2F3xUOLbbmD9q%2B5pe3Wh6CkJpYLo8RL4PztOsp2tHSoooyIqWJFbky5SvedT0xjRZx%2FJH1cApkyff3REANdnlPcaaW6HP18fguHJt13lTQ4Zu0QuKkMPmW195b%2FwoTGuDTi6a9ltC6rBof%2B%2BlaHmR56sym%2BwpjwhMKDRMAFFS%2FxhvuYI15ppigOr7LUNYg%3D%3D; bkng_ap=U2FsdGVkX1%2F73Eh0vzq7M15vCgAMvjGd8lUjrzMRZEi6oGFrMANGiWneaesbIek%2BDgkUWS%2FLRCis%0AO2gdrzQgcA%3D%3D%0A; _pxff_fp=1; _pxff_cfp=1; _pxff_ddtc=1; OptanonConsent=implicitConsentCountry=nonGDPR&implicitConsentDate=1693407758176&isGpcEnabled=0&datestamp=Wed+Aug+30+2023+23%3A41%3A40+GMT%2B0500+(Pakistan+Standard+Time)&version=202305.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=cc22644b-18de-4634-a0a2-b2706418ff02&interactionCount=0&landingPath=https%3A%2F%2Faccount.booking.com%2Fsign-in%3Fop_token%3DEgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg&groups=C0001%3A1%2CC0002%3A1; _px3=eea92ab3a08f069846b674165eb75637fa8bf6c46391e561f81e9f0936bf380a:SNYnx1JZnul+/N/xyY1bSQcH/Rlhl4/m7EN8gquYfUEiRYV62ALlb2FVsT6aPCAD87SFxVVm2Nnobw2igUoa7Q==:1000:q8FIM3vTQAvhtF6/W2Srym/MhQU7buuXAmqnUKAJOmPiggEx2lUcU57l7wYtDPuMTWGfKV7CD0/0OwjCkKntVo4jXjaNR5hby8gvXM1EnFpn+S7drYo3H0ImMabkTIjVkUfEpOaKHB4FgPobLNjRcrw2JlE8ygkBXTo50EsTmJeVxYAmdP5fRBYFhfBYmO8c4Y2r4IIs8Anx1/ayfX7qKw==; _pxde=245a9d65a741d45109da5a44090b7a362e30608299f5aee39e486041ccf0e051:eyJ0aW1lc3RhbXAiOjE2OTM0MjA5MDE5MjEsImZfa2IiOjAsImlwY19pZCI6W119; bkng_ap_sso_session=eyJib29raW5nX2dsb2JhbCI6eyJzZXNzaW9ucyI6W3sic2Vzc2lvbl9yZWZlcmVuY2UiOiJkZDdhNjE3MS02ZjNlLTQ3ZGYtODFlZC1mOWExYTNlMjU4YjciLCJyZWZyZXNoX3Rva2VuIjoiQ0FFU2QxSjFEbW5wMjZWUHZ2WE4xcmlWOTlLWWVDR0U2RVUwX2lCblppdHk4b1c0U2xNRDlUQk5mWXlCRlhDVXZ5TVBVZTJiWndKVWQyQnFFQmNFN09ZNVR4LUdKbnMxUy15TDBUQk9lLWg5MVh2NG9iR2RUN0RWU2twblhBWHh6STg3MkZURk1vN0FKU1ViSFRNN0Y4MXZiVUluODlTZFgwMVUifV0sImRhdGFfc3ViamVjdF9pZCI6IjYyNzJlYmM2LWM2YjktNDUyMy1hN2U4LWRiMGIyMmYwMmM5ZCJ9fQ; bkng_sso_ses=eyJib29raW5nX2dsb2JhbCI6W3siYSI6MSwiaCI6Ik5XMzFwTTZxREhxclppOHVJUHhMWFB0QjJFUVRhN0U3K1d3ZVRZTkFSRkEifV19; aws-waf-token=5b5af35f-a4fe-4280-a4d8-4605a76396ec:BQoAsIKDNCgBAAAA:PRt2qZYLWKxv380l7ys8LzEsl7kDEJZFIdHTtI0/IuenQjW6Nj5dOkLxO9vJu0ZWvNuz3fZQkvrEZBsF1zoYtCJjpZTFwniG2+G4UkOCVKuYLf4yO2ctupLyVYO3MGra8k3+8mqktWryHk8vxOYw1W35b2nR2IvjrRqdVsiF9uYgxoH/sJZpZHgoSPAl/GGd+eq2lZoNxZunDEZ6W3zY4KnguwiwRZMz3M1qkoV1XCf7Z70r0KiLXlC9iQOA"
+							},
+							{
+								"key": "origin",
+								"value": "https://account.booking.com"
+							},
+							{
+								"key": "referer",
+								"value": "https://account.booking.com/sign-in/password?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-booking-client",
+								"value": "ap"
+							},
+							{
+								"key": "x-requested-with",
+								"value": "XMLHttpRequest"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"context\": {\r\n        \"value\": \"UqQBpTyHdPbHmiNGhGduHgm9FfSUCJV_Kx9pevH9_ge3OzDevEeFoSy0--tYpKJTxYEIcCkvnOQ1ie5zmN4pdjqTNU4iHqQ32uwF4PZQzNcXHZ7NBSi0zYrlDBLffCjXjAwV2Q9jmT0hZsiew6tq6nh3QlRsrW2itZD\"\r\n    },\r\n    \"authenticator\": {\r\n        \"type\": \"AUTHENTICATOR_TYPE__PASSWORD\",\r\n        \"value\": \"Password@123\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "https://account.booking.com/api/identity/authenticate/v1.0/sign_in/password/submit?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg",
+							"protocol": "https",
+							"host": [
+								"account",
+								"booking",
+								"com"
+							],
+							"path": [
+								"api",
+								"identity",
+								"authenticate",
+								"v1.0",
+								"sign_in",
+								"password",
+								"submit"
+							],
+							"query": [
+								{
+									"key": "op_token",
+									"value": "EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login without authenticatot type",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var response = pm.response.json()\r",
+									"\r",
+									"pm.test(\"Test data type of the response\", () => {\r",
+									"  pm.expect(response).to.be.an(\"object\");\r",
+									"});\r",
+									"\r",
+									"var saved_response = {\r",
+									"    \"context\": {\r",
+									"        \"value\": \"UqQBpTyHdPbHmiNGhGduHgm9FfSUCJV_Kx9pevH9_ge3OzDevEeFoSy0--tYpKJTxYEIcCkvnOQ1ie5zmN4pdjqTNU4iHqQ32uwF4PZQzNcXHZ7NBSi0zYrlDBLffCjXjAwV2Q9jmT0hZsiew6tq6nh3QlRsrW2itZDEiZRsIW6vwQGnC0oetOdxs3dJjRCfA7JX6AE1qjuxz7l2uuUg8ZYfZUq2GQg=\"\r",
+									"    },\r",
+									"    \"error\": [\r",
+									"        {\r",
+									"            \"errorDetails\": \"Unexpected authenticator type\",\r",
+									"            \"code\": \"ERROR_CODE__UNEXPECTED_AUTHENTICATOR_TYPE\"\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Validate response\", () => {\r",
+									"  pm.expect(response).to.eql(saved_response);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "account.booking.com"
+							},
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "max-age=0"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "px_init=0; cors_js=1; BJS=-; _gid=GA1.2.1703675266.1693407760; pxcts=47d4b64b-4746-11ee-8ddd-59524a7a536e; _pxvid=47d4ab82-4746-11ee-8ddd-aaaaa1bd92fa; bkng_prue=1; _gcl_au=1.1.1146911255.1693407788; _scid=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _pin_unauth=dWlkPVpEUTBNMk16WmprdFl6TmxNUzAwTm1Sa0xUbG1Zamt0TldNd05UTTRNV1kzTW1abA; _sctr=1%7C1693335600000; g_state={\"i_p\":1693414993050,\"i_l\":1}; bkng_ap_lang=en-us; cto_bundle=yK0cGF9xQ2xOcExTM1BjM3hqaDVFdW9Zemp6TWNqOWslMkJjMGpkckhZOW5xWVRUSmt5N080TU45YXc3Y0psMmlISkRDYmV2WU1pNVJwMlZQcHI4dDRHak51UW5Tc2ZUdkFjWGx1TTZyZTA5VEhpZWFpOUJUSHY1aUFQUnNBRVVKM0JJUlg2MFUxcTJ6RzZaMTBaSGZUN1pFN1F5ZyUzRCUzRA; _scid_r=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _derived_epik=dj0yJnU9SlhlU28ycl8xNEg1b0l4RHctUmxVSE5oMFRfeTFTam4mbj1ZV2VZeXlWellTZG5DNC1fenZWUTdnJm09MSZ0PUFBQUFBR1R2YXpzJnJtPTEmcnQ9QUFBQUFHVHZhenMmc3A9Mg; _ga_FPD6YLJCJ7=GS1.1.1693407787.1.1.1693412158.0.0.0; _ga=GA1.2.29860013.1693407760; pcm_consent=consentedAt%3D2023-08-30T16%3A48%3A09.120Z%26countryCode%3DPK%26expiresAt%3D2024-02-26T16%3A48%3A09.120Z%26implicit%3Dfalse%26regulation%3Dnone%26legacyRegulation%3Dnone%26consentId%3D0c32f29a-18cb-4929-b4df-24671b2c58e7%26analytical%3Dtrue%26marketing%3Dtrue; reese84=3:c46FrqlkSnd8Y0i0Iuz/bw==:hh5Hf+vCBe/a+UU9ndO6G/xpPbsrsC5NhND2DUHO01j+cNvOLmlu9BSGpj5z+guabQxFIBcW0gfOtPIoACOvvLnPJQ5oNgsJnd6UfV/WeRg00PiUnnzu31Nx2QGdDdnG9xYBeTnFNL/ey65BePAAWLiUkMqfD3AyXpAp7lIRRAZXdHnDvsnw9JJq+aLLD8sB3kvqAP7PsPGtL2P7dS8s+pZVx6Ph4P8d07tFB0PYIu0zTq0Wy+nWJb73py5HsD8UOcrIP9shbsNwdjnvC/j4aclTGM+axE2c5qvGKFrLaADvKBIu8g+IYuVAbehRl9onyND6Rk6Q0XEqpSp0OtUM1zTkpHuZANr++9Wx3NY6ZvFhCi1RjEIOIjb0gEcX8eR2YulAGYrDruUB+TB4rxp6ZdVXZk9VH0S3g54uBkBYKUhUG2VkviG7ckxOvCUgs4uTk3EmDlQRZz182HbyP4MNvsViQenlqoq1OkDVQjwY5yVAURXeXF9yegMQayoy7fiC:1t0bbP3MDYmrWnEMxpCew/xmP8lsoR/9N9Y6ffLQtNc=; _pxhd=ww6VhM7hZaAjABdcwNoTxHB8beHpoNlFEeyx0WsL%2Fsr518aerBBnVNoV4ZYQtKeLLLgAeyHEQHL3AD1Ila4ovQ%3D%3D%3AcGk2gwSTCSrqxu5sdspqyj9R3YqV7OKsD2r6SPkX1LI7lrokEY732Wgu5F3JQyHzqmTtvFJ%2FkD8vBJ9U7Au9vVeKOaDvwdpe%2FoFvJ3qeznw%3D; bkng_sso_session=e30; bkng_sso_auth=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; bkng_sso_auth_1693420892=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; _gat=1; _uetsid=542b6da0474611ee82db0961c6c94a6c; _uetvid=542bb400474611ee8208356ca10a19c7; lastSeen=1693420898101; bkng=11UmFuZG9tSVYkc2RlIyh9Yaa29%2F3xUOLbbmD9q%2B5pe3Wh6CkJpYLo8RL4PztOsp2tHSoooyIqWJFbky5SvedT0xjRZx%2FJH1cApkyff3REANdnlPcaaW6HP18fguHJt13lTQ4Zu0QuKkMPmW195b%2FwoTGuDTi6a9ltC6rBof%2B%2BlaHmR56sym%2BwpjwhMKDRMAFFS%2FxhvuYI15ppigOr7LUNYg%3D%3D; bkng_ap=U2FsdGVkX1%2F73Eh0vzq7M15vCgAMvjGd8lUjrzMRZEi6oGFrMANGiWneaesbIek%2BDgkUWS%2FLRCis%0AO2gdrzQgcA%3D%3D%0A; _pxff_fp=1; _pxff_cfp=1; _pxff_ddtc=1; OptanonConsent=implicitConsentCountry=nonGDPR&implicitConsentDate=1693407758176&isGpcEnabled=0&datestamp=Wed+Aug+30+2023+23%3A41%3A40+GMT%2B0500+(Pakistan+Standard+Time)&version=202305.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=cc22644b-18de-4634-a0a2-b2706418ff02&interactionCount=0&landingPath=https%3A%2F%2Faccount.booking.com%2Fsign-in%3Fop_token%3DEgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg&groups=C0001%3A1%2CC0002%3A1; _px3=eea92ab3a08f069846b674165eb75637fa8bf6c46391e561f81e9f0936bf380a:SNYnx1JZnul+/N/xyY1bSQcH/Rlhl4/m7EN8gquYfUEiRYV62ALlb2FVsT6aPCAD87SFxVVm2Nnobw2igUoa7Q==:1000:q8FIM3vTQAvhtF6/W2Srym/MhQU7buuXAmqnUKAJOmPiggEx2lUcU57l7wYtDPuMTWGfKV7CD0/0OwjCkKntVo4jXjaNR5hby8gvXM1EnFpn+S7drYo3H0ImMabkTIjVkUfEpOaKHB4FgPobLNjRcrw2JlE8ygkBXTo50EsTmJeVxYAmdP5fRBYFhfBYmO8c4Y2r4IIs8Anx1/ayfX7qKw==; _pxde=245a9d65a741d45109da5a44090b7a362e30608299f5aee39e486041ccf0e051:eyJ0aW1lc3RhbXAiOjE2OTM0MjA5MDE5MjEsImZfa2IiOjAsImlwY19pZCI6W119; bkng_ap_sso_session=eyJib29raW5nX2dsb2JhbCI6eyJzZXNzaW9ucyI6W3sic2Vzc2lvbl9yZWZlcmVuY2UiOiJkZDdhNjE3MS02ZjNlLTQ3ZGYtODFlZC1mOWExYTNlMjU4YjciLCJyZWZyZXNoX3Rva2VuIjoiQ0FFU2QxSjFEbW5wMjZWUHZ2WE4xcmlWOTlLWWVDR0U2RVUwX2lCblppdHk4b1c0U2xNRDlUQk5mWXlCRlhDVXZ5TVBVZTJiWndKVWQyQnFFQmNFN09ZNVR4LUdKbnMxUy15TDBUQk9lLWg5MVh2NG9iR2RUN0RWU2twblhBWHh6STg3MkZURk1vN0FKU1ViSFRNN0Y4MXZiVUluODlTZFgwMVUifV0sImRhdGFfc3ViamVjdF9pZCI6IjYyNzJlYmM2LWM2YjktNDUyMy1hN2U4LWRiMGIyMmYwMmM5ZCJ9fQ; bkng_sso_ses=eyJib29raW5nX2dsb2JhbCI6W3siYSI6MSwiaCI6Ik5XMzFwTTZxREhxclppOHVJUHhMWFB0QjJFUVRhN0U3K1d3ZVRZTkFSRkEifV19; aws-waf-token=5b5af35f-a4fe-4280-a4d8-4605a76396ec:BQoAsIKDNCgBAAAA:PRt2qZYLWKxv380l7ys8LzEsl7kDEJZFIdHTtI0/IuenQjW6Nj5dOkLxO9vJu0ZWvNuz3fZQkvrEZBsF1zoYtCJjpZTFwniG2+G4UkOCVKuYLf4yO2ctupLyVYO3MGra8k3+8mqktWryHk8vxOYw1W35b2nR2IvjrRqdVsiF9uYgxoH/sJZpZHgoSPAl/GGd+eq2lZoNxZunDEZ6W3zY4KnguwiwRZMz3M1qkoV1XCf7Z70r0KiLXlC9iQOA"
+							},
+							{
+								"key": "origin",
+								"value": "https://account.booking.com"
+							},
+							{
+								"key": "referer",
+								"value": "https://account.booking.com/sign-in/password?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-booking-client",
+								"value": "ap"
+							},
+							{
+								"key": "x-requested-with",
+								"value": "XMLHttpRequest"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"context\": {\r\n        \"value\": \"UqQBpTyHdPbHmiNGhGduHgm9FfSUCJV_Kx9pevH9_ge3OzDevEeFoSy0--tYpKJTxYEIcCkvnOQ1ie5zmN4pdjqTNU4iHqQ32uwF4PZQzNcXHZ7NBSi0zYrlDBLffCjXjAwV2Q9jmT0hZsiew6tq6nh3QlRsrW2itZDEiZRsIW6vwQGnC0oetOdxs3dJjRCfA7JX6AE1qjuxz7l2uuUg8ZYfZUq2GQg=\"\r\n    },\r\n    \"authenticator\": {\r\n        \"value\": \"Password@123\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "https://account.booking.com/api/identity/authenticate/v1.0/sign_in/password/submit?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg",
+							"protocol": "https",
+							"host": [
+								"account",
+								"booking",
+								"com"
+							],
+							"path": [
+								"api",
+								"identity",
+								"authenticate",
+								"v1.0",
+								"sign_in",
+								"password",
+								"submit"
+							],
+							"query": [
+								{
+									"key": "op_token",
+									"value": "EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login with wrong authenticatot type",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var response = pm.response.json()\r",
+									"\r",
+									"pm.test(\"Test data type of the response\", () => {\r",
+									"  pm.expect(response).to.be.an(\"object\");\r",
+									"});\r",
+									"\r",
+									"var saved_response = {\r",
+									"    \"context\": {\r",
+									"        \"value\": \"UqQBpTyHdPbHmiNGhGduHgm9FfSUCJV_Kx9pevH9_ge3OzDevEeFoSy0--tYpKJTxYEIcCkvnOQ1ie5zmN4pdjqTNU4iHqQ32uwF4PZQzNcXHZ7NBSi0zYrlDBLffCjXjAwV2Q9jmT0hZsiew6tq6nh3QlRsrW2itZDEiZRsIW6vwQGnC0oetOdxs3dJjRCfA7JX6AE1qjuxz7l2uuUg8ZYfZUq2GQg=\"\r",
+									"    },\r",
+									"    \"error\": [\r",
+									"        {\r",
+									"            \"errorDetails\": \"Unexpected authenticator type\",\r",
+									"            \"code\": \"ERROR_CODE__UNEXPECTED_AUTHENTICATOR_TYPE\"\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Validate response\", () => {\r",
+									"  pm.expect(response).to.eql(saved_response);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "account.booking.com"
+							},
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "max-age=0"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "px_init=0; cors_js=1; BJS=-; _gid=GA1.2.1703675266.1693407760; pxcts=47d4b64b-4746-11ee-8ddd-59524a7a536e; _pxvid=47d4ab82-4746-11ee-8ddd-aaaaa1bd92fa; bkng_prue=1; _gcl_au=1.1.1146911255.1693407788; _scid=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _pin_unauth=dWlkPVpEUTBNMk16WmprdFl6TmxNUzAwTm1Sa0xUbG1Zamt0TldNd05UTTRNV1kzTW1abA; _sctr=1%7C1693335600000; g_state={\"i_p\":1693414993050,\"i_l\":1}; bkng_ap_lang=en-us; cto_bundle=yK0cGF9xQ2xOcExTM1BjM3hqaDVFdW9Zemp6TWNqOWslMkJjMGpkckhZOW5xWVRUSmt5N080TU45YXc3Y0psMmlISkRDYmV2WU1pNVJwMlZQcHI4dDRHak51UW5Tc2ZUdkFjWGx1TTZyZTA5VEhpZWFpOUJUSHY1aUFQUnNBRVVKM0JJUlg2MFUxcTJ6RzZaMTBaSGZUN1pFN1F5ZyUzRCUzRA; _scid_r=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _derived_epik=dj0yJnU9SlhlU28ycl8xNEg1b0l4RHctUmxVSE5oMFRfeTFTam4mbj1ZV2VZeXlWellTZG5DNC1fenZWUTdnJm09MSZ0PUFBQUFBR1R2YXpzJnJtPTEmcnQ9QUFBQUFHVHZhenMmc3A9Mg; _ga_FPD6YLJCJ7=GS1.1.1693407787.1.1.1693412158.0.0.0; _ga=GA1.2.29860013.1693407760; pcm_consent=consentedAt%3D2023-08-30T16%3A48%3A09.120Z%26countryCode%3DPK%26expiresAt%3D2024-02-26T16%3A48%3A09.120Z%26implicit%3Dfalse%26regulation%3Dnone%26legacyRegulation%3Dnone%26consentId%3D0c32f29a-18cb-4929-b4df-24671b2c58e7%26analytical%3Dtrue%26marketing%3Dtrue; reese84=3:c46FrqlkSnd8Y0i0Iuz/bw==:hh5Hf+vCBe/a+UU9ndO6G/xpPbsrsC5NhND2DUHO01j+cNvOLmlu9BSGpj5z+guabQxFIBcW0gfOtPIoACOvvLnPJQ5oNgsJnd6UfV/WeRg00PiUnnzu31Nx2QGdDdnG9xYBeTnFNL/ey65BePAAWLiUkMqfD3AyXpAp7lIRRAZXdHnDvsnw9JJq+aLLD8sB3kvqAP7PsPGtL2P7dS8s+pZVx6Ph4P8d07tFB0PYIu0zTq0Wy+nWJb73py5HsD8UOcrIP9shbsNwdjnvC/j4aclTGM+axE2c5qvGKFrLaADvKBIu8g+IYuVAbehRl9onyND6Rk6Q0XEqpSp0OtUM1zTkpHuZANr++9Wx3NY6ZvFhCi1RjEIOIjb0gEcX8eR2YulAGYrDruUB+TB4rxp6ZdVXZk9VH0S3g54uBkBYKUhUG2VkviG7ckxOvCUgs4uTk3EmDlQRZz182HbyP4MNvsViQenlqoq1OkDVQjwY5yVAURXeXF9yegMQayoy7fiC:1t0bbP3MDYmrWnEMxpCew/xmP8lsoR/9N9Y6ffLQtNc=; _pxhd=ww6VhM7hZaAjABdcwNoTxHB8beHpoNlFEeyx0WsL%2Fsr518aerBBnVNoV4ZYQtKeLLLgAeyHEQHL3AD1Ila4ovQ%3D%3D%3AcGk2gwSTCSrqxu5sdspqyj9R3YqV7OKsD2r6SPkX1LI7lrokEY732Wgu5F3JQyHzqmTtvFJ%2FkD8vBJ9U7Au9vVeKOaDvwdpe%2FoFvJ3qeznw%3D; bkng_sso_session=e30; bkng_sso_auth=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; bkng_sso_auth_1693420892=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; _gat=1; _uetsid=542b6da0474611ee82db0961c6c94a6c; _uetvid=542bb400474611ee8208356ca10a19c7; lastSeen=1693420898101; bkng=11UmFuZG9tSVYkc2RlIyh9Yaa29%2F3xUOLbbmD9q%2B5pe3Wh6CkJpYLo8RL4PztOsp2tHSoooyIqWJFbky5SvedT0xjRZx%2FJH1cApkyff3REANdnlPcaaW6HP18fguHJt13lTQ4Zu0QuKkMPmW195b%2FwoTGuDTi6a9ltC6rBof%2B%2BlaHmR56sym%2BwpjwhMKDRMAFFS%2FxhvuYI15ppigOr7LUNYg%3D%3D; bkng_ap=U2FsdGVkX1%2F73Eh0vzq7M15vCgAMvjGd8lUjrzMRZEi6oGFrMANGiWneaesbIek%2BDgkUWS%2FLRCis%0AO2gdrzQgcA%3D%3D%0A; _pxff_fp=1; _pxff_cfp=1; _pxff_ddtc=1; OptanonConsent=implicitConsentCountry=nonGDPR&implicitConsentDate=1693407758176&isGpcEnabled=0&datestamp=Wed+Aug+30+2023+23%3A41%3A40+GMT%2B0500+(Pakistan+Standard+Time)&version=202305.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=cc22644b-18de-4634-a0a2-b2706418ff02&interactionCount=0&landingPath=https%3A%2F%2Faccount.booking.com%2Fsign-in%3Fop_token%3DEgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg&groups=C0001%3A1%2CC0002%3A1; _px3=eea92ab3a08f069846b674165eb75637fa8bf6c46391e561f81e9f0936bf380a:SNYnx1JZnul+/N/xyY1bSQcH/Rlhl4/m7EN8gquYfUEiRYV62ALlb2FVsT6aPCAD87SFxVVm2Nnobw2igUoa7Q==:1000:q8FIM3vTQAvhtF6/W2Srym/MhQU7buuXAmqnUKAJOmPiggEx2lUcU57l7wYtDPuMTWGfKV7CD0/0OwjCkKntVo4jXjaNR5hby8gvXM1EnFpn+S7drYo3H0ImMabkTIjVkUfEpOaKHB4FgPobLNjRcrw2JlE8ygkBXTo50EsTmJeVxYAmdP5fRBYFhfBYmO8c4Y2r4IIs8Anx1/ayfX7qKw==; _pxde=245a9d65a741d45109da5a44090b7a362e30608299f5aee39e486041ccf0e051:eyJ0aW1lc3RhbXAiOjE2OTM0MjA5MDE5MjEsImZfa2IiOjAsImlwY19pZCI6W119; bkng_ap_sso_session=eyJib29raW5nX2dsb2JhbCI6eyJzZXNzaW9ucyI6W3sic2Vzc2lvbl9yZWZlcmVuY2UiOiJkZDdhNjE3MS02ZjNlLTQ3ZGYtODFlZC1mOWExYTNlMjU4YjciLCJyZWZyZXNoX3Rva2VuIjoiQ0FFU2QxSjFEbW5wMjZWUHZ2WE4xcmlWOTlLWWVDR0U2RVUwX2lCblppdHk4b1c0U2xNRDlUQk5mWXlCRlhDVXZ5TVBVZTJiWndKVWQyQnFFQmNFN09ZNVR4LUdKbnMxUy15TDBUQk9lLWg5MVh2NG9iR2RUN0RWU2twblhBWHh6STg3MkZURk1vN0FKU1ViSFRNN0Y4MXZiVUluODlTZFgwMVUifV0sImRhdGFfc3ViamVjdF9pZCI6IjYyNzJlYmM2LWM2YjktNDUyMy1hN2U4LWRiMGIyMmYwMmM5ZCJ9fQ; bkng_sso_ses=eyJib29raW5nX2dsb2JhbCI6W3siYSI6MSwiaCI6Ik5XMzFwTTZxREhxclppOHVJUHhMWFB0QjJFUVRhN0U3K1d3ZVRZTkFSRkEifV19; aws-waf-token=5b5af35f-a4fe-4280-a4d8-4605a76396ec:BQoAsIKDNCgBAAAA:PRt2qZYLWKxv380l7ys8LzEsl7kDEJZFIdHTtI0/IuenQjW6Nj5dOkLxO9vJu0ZWvNuz3fZQkvrEZBsF1zoYtCJjpZTFwniG2+G4UkOCVKuYLf4yO2ctupLyVYO3MGra8k3+8mqktWryHk8vxOYw1W35b2nR2IvjrRqdVsiF9uYgxoH/sJZpZHgoSPAl/GGd+eq2lZoNxZunDEZ6W3zY4KnguwiwRZMz3M1qkoV1XCf7Z70r0KiLXlC9iQOA"
+							},
+							{
+								"key": "origin",
+								"value": "https://account.booking.com"
+							},
+							{
+								"key": "referer",
+								"value": "https://account.booking.com/sign-in/password?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-booking-client",
+								"value": "ap"
+							},
+							{
+								"key": "x-requested-with",
+								"value": "XMLHttpRequest"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"context\": {\r\n        \"value\": \"UqQBpTyHdPbHmiNGhGduHgm9FfSUCJV_Kx9pevH9_ge3OzDevEeFoSy0--tYpKJTxYEIcCkvnOQ1ie5zmN4pdjqTNU4iHqQ32uwF4PZQzNcXHZ7NBSi0zYrlDBLffCjXjAwV2Q9jmT0hZsiew6tq6nh3QlRsrW2itZDEiZRsIW6vwQGnC0oetOdxs3dJjRCfA7JX6AE1qjuxz7l2uuUg8ZYfZUq2GQg=\"\r\n    },\r\n    \"authenticator\": {\r\n        \"type\": \"AUTHENTICATOR_PASSWORD\",\r\n        \"value\": \"Password@123\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "https://account.booking.com/api/identity/authenticate/v1.0/sign_in/password/submit?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg",
+							"protocol": "https",
+							"host": [
+								"account",
+								"booking",
+								"com"
+							],
+							"path": [
+								"api",
+								"identity",
+								"authenticate",
+								"v1.0",
+								"sign_in",
+								"password",
+								"submit"
+							],
+							"query": [
+								{
+									"key": "op_token",
+									"value": "EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login without body value",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", () => {\r",
+									"  pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"var response = pm.response.json()\r",
+									"\r",
+									"pm.test(\"Test data type of the response\", () => {\r",
+									"  pm.expect(response).to.be.an(\"object\");\r",
+									"});\r",
+									"\r",
+									"var saved_response = {\r",
+									"    \"message\": \"The request body is invalid\"\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Validate response\", () => {\r",
+									"  pm.expect(response).to.eql(saved_response);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "account.booking.com"
+							},
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "max-age=0"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "px_init=0; cors_js=1; BJS=-; _gid=GA1.2.1703675266.1693407760; pxcts=47d4b64b-4746-11ee-8ddd-59524a7a536e; _pxvid=47d4ab82-4746-11ee-8ddd-aaaaa1bd92fa; bkng_prue=1; _gcl_au=1.1.1146911255.1693407788; _scid=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _pin_unauth=dWlkPVpEUTBNMk16WmprdFl6TmxNUzAwTm1Sa0xUbG1Zamt0TldNd05UTTRNV1kzTW1abA; _sctr=1%7C1693335600000; g_state={\"i_p\":1693414993050,\"i_l\":1}; bkng_ap_lang=en-us; cto_bundle=yK0cGF9xQ2xOcExTM1BjM3hqaDVFdW9Zemp6TWNqOWslMkJjMGpkckhZOW5xWVRUSmt5N080TU45YXc3Y0psMmlISkRDYmV2WU1pNVJwMlZQcHI4dDRHak51UW5Tc2ZUdkFjWGx1TTZyZTA5VEhpZWFpOUJUSHY1aUFQUnNBRVVKM0JJUlg2MFUxcTJ6RzZaMTBaSGZUN1pFN1F5ZyUzRCUzRA; _scid_r=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _derived_epik=dj0yJnU9SlhlU28ycl8xNEg1b0l4RHctUmxVSE5oMFRfeTFTam4mbj1ZV2VZeXlWellTZG5DNC1fenZWUTdnJm09MSZ0PUFBQUFBR1R2YXpzJnJtPTEmcnQ9QUFBQUFHVHZhenMmc3A9Mg; _ga_FPD6YLJCJ7=GS1.1.1693407787.1.1.1693412158.0.0.0; _ga=GA1.2.29860013.1693407760; pcm_consent=consentedAt%3D2023-08-30T16%3A48%3A09.120Z%26countryCode%3DPK%26expiresAt%3D2024-02-26T16%3A48%3A09.120Z%26implicit%3Dfalse%26regulation%3Dnone%26legacyRegulation%3Dnone%26consentId%3D0c32f29a-18cb-4929-b4df-24671b2c58e7%26analytical%3Dtrue%26marketing%3Dtrue; reese84=3:c46FrqlkSnd8Y0i0Iuz/bw==:hh5Hf+vCBe/a+UU9ndO6G/xpPbsrsC5NhND2DUHO01j+cNvOLmlu9BSGpj5z+guabQxFIBcW0gfOtPIoACOvvLnPJQ5oNgsJnd6UfV/WeRg00PiUnnzu31Nx2QGdDdnG9xYBeTnFNL/ey65BePAAWLiUkMqfD3AyXpAp7lIRRAZXdHnDvsnw9JJq+aLLD8sB3kvqAP7PsPGtL2P7dS8s+pZVx6Ph4P8d07tFB0PYIu0zTq0Wy+nWJb73py5HsD8UOcrIP9shbsNwdjnvC/j4aclTGM+axE2c5qvGKFrLaADvKBIu8g+IYuVAbehRl9onyND6Rk6Q0XEqpSp0OtUM1zTkpHuZANr++9Wx3NY6ZvFhCi1RjEIOIjb0gEcX8eR2YulAGYrDruUB+TB4rxp6ZdVXZk9VH0S3g54uBkBYKUhUG2VkviG7ckxOvCUgs4uTk3EmDlQRZz182HbyP4MNvsViQenlqoq1OkDVQjwY5yVAURXeXF9yegMQayoy7fiC:1t0bbP3MDYmrWnEMxpCew/xmP8lsoR/9N9Y6ffLQtNc=; _pxhd=ww6VhM7hZaAjABdcwNoTxHB8beHpoNlFEeyx0WsL%2Fsr518aerBBnVNoV4ZYQtKeLLLgAeyHEQHL3AD1Ila4ovQ%3D%3D%3AcGk2gwSTCSrqxu5sdspqyj9R3YqV7OKsD2r6SPkX1LI7lrokEY732Wgu5F3JQyHzqmTtvFJ%2FkD8vBJ9U7Au9vVeKOaDvwdpe%2FoFvJ3qeznw%3D; bkng_sso_session=e30; bkng_sso_auth=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; bkng_sso_auth_1693420892=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; _gat=1; _uetsid=542b6da0474611ee82db0961c6c94a6c; _uetvid=542bb400474611ee8208356ca10a19c7; lastSeen=1693420898101; bkng=11UmFuZG9tSVYkc2RlIyh9Yaa29%2F3xUOLbbmD9q%2B5pe3Wh6CkJpYLo8RL4PztOsp2tHSoooyIqWJFbky5SvedT0xjRZx%2FJH1cApkyff3REANdnlPcaaW6HP18fguHJt13lTQ4Zu0QuKkMPmW195b%2FwoTGuDTi6a9ltC6rBof%2B%2BlaHmR56sym%2BwpjwhMKDRMAFFS%2FxhvuYI15ppigOr7LUNYg%3D%3D; bkng_ap=U2FsdGVkX1%2F73Eh0vzq7M15vCgAMvjGd8lUjrzMRZEi6oGFrMANGiWneaesbIek%2BDgkUWS%2FLRCis%0AO2gdrzQgcA%3D%3D%0A; _pxff_fp=1; _pxff_cfp=1; _pxff_ddtc=1; OptanonConsent=implicitConsentCountry=nonGDPR&implicitConsentDate=1693407758176&isGpcEnabled=0&datestamp=Wed+Aug+30+2023+23%3A41%3A40+GMT%2B0500+(Pakistan+Standard+Time)&version=202305.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=cc22644b-18de-4634-a0a2-b2706418ff02&interactionCount=0&landingPath=https%3A%2F%2Faccount.booking.com%2Fsign-in%3Fop_token%3DEgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg&groups=C0001%3A1%2CC0002%3A1; _px3=eea92ab3a08f069846b674165eb75637fa8bf6c46391e561f81e9f0936bf380a:SNYnx1JZnul+/N/xyY1bSQcH/Rlhl4/m7EN8gquYfUEiRYV62ALlb2FVsT6aPCAD87SFxVVm2Nnobw2igUoa7Q==:1000:q8FIM3vTQAvhtF6/W2Srym/MhQU7buuXAmqnUKAJOmPiggEx2lUcU57l7wYtDPuMTWGfKV7CD0/0OwjCkKntVo4jXjaNR5hby8gvXM1EnFpn+S7drYo3H0ImMabkTIjVkUfEpOaKHB4FgPobLNjRcrw2JlE8ygkBXTo50EsTmJeVxYAmdP5fRBYFhfBYmO8c4Y2r4IIs8Anx1/ayfX7qKw==; _pxde=245a9d65a741d45109da5a44090b7a362e30608299f5aee39e486041ccf0e051:eyJ0aW1lc3RhbXAiOjE2OTM0MjA5MDE5MjEsImZfa2IiOjAsImlwY19pZCI6W119; bkng_ap_sso_session=eyJib29raW5nX2dsb2JhbCI6eyJzZXNzaW9ucyI6W3sic2Vzc2lvbl9yZWZlcmVuY2UiOiJkZDdhNjE3MS02ZjNlLTQ3ZGYtODFlZC1mOWExYTNlMjU4YjciLCJyZWZyZXNoX3Rva2VuIjoiQ0FFU2QxSjFEbW5wMjZWUHZ2WE4xcmlWOTlLWWVDR0U2RVUwX2lCblppdHk4b1c0U2xNRDlUQk5mWXlCRlhDVXZ5TVBVZTJiWndKVWQyQnFFQmNFN09ZNVR4LUdKbnMxUy15TDBUQk9lLWg5MVh2NG9iR2RUN0RWU2twblhBWHh6STg3MkZURk1vN0FKU1ViSFRNN0Y4MXZiVUluODlTZFgwMVUifV0sImRhdGFfc3ViamVjdF9pZCI6IjYyNzJlYmM2LWM2YjktNDUyMy1hN2U4LWRiMGIyMmYwMmM5ZCJ9fQ; bkng_sso_ses=eyJib29raW5nX2dsb2JhbCI6W3siYSI6MSwiaCI6Ik5XMzFwTTZxREhxclppOHVJUHhMWFB0QjJFUVRhN0U3K1d3ZVRZTkFSRkEifV19; aws-waf-token=5b5af35f-a4fe-4280-a4d8-4605a76396ec:BQoAsIKDNCgBAAAA:PRt2qZYLWKxv380l7ys8LzEsl7kDEJZFIdHTtI0/IuenQjW6Nj5dOkLxO9vJu0ZWvNuz3fZQkvrEZBsF1zoYtCJjpZTFwniG2+G4UkOCVKuYLf4yO2ctupLyVYO3MGra8k3+8mqktWryHk8vxOYw1W35b2nR2IvjrRqdVsiF9uYgxoH/sJZpZHgoSPAl/GGd+eq2lZoNxZunDEZ6W3zY4KnguwiwRZMz3M1qkoV1XCf7Z70r0KiLXlC9iQOA"
+							},
+							{
+								"key": "origin",
+								"value": "https://account.booking.com"
+							},
+							{
+								"key": "referer",
+								"value": "https://account.booking.com/sign-in/password?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-booking-client",
+								"value": "ap"
+							},
+							{
+								"key": "x-requested-with",
+								"value": "XMLHttpRequest"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"context\": {\r\n        \"value\": \"UqQBpTyHdPbHmiNGhGduHgm9FfSUCJV_Kx9pevH9_ge3OzDevEeFoSy0--tYpKJTxYEIcCkvnOQ1ie5zmN4pdjqTNU4iHqQ32uwF4PZQzNcXHZ7NBSi0zYrlDBLffCjXjAwV2Q9jmT0hZsiew6tq6nh3QlRsrW2itZDEiZRsIW6vwQGnC0oetOdxs3dJjRCfA7JX6AE1qjuxz7l2uuUg8ZYfZUq2GQg=\"\r\n    },\r\n    \"authenticator\": {\r\n        \"type\": \"AUTHENTICATOR_TYPE__PASSWORD\",\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "https://account.booking.com/api/identity/authenticate/v1.0/sign_in/password/submit?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg",
+							"protocol": "https",
+							"host": [
+								"account",
+								"booking",
+								"com"
+							],
+							"path": [
+								"api",
+								"identity",
+								"authenticate",
+								"v1.0",
+								"sign_in",
+								"password",
+								"submit"
+							],
+							"query": [
+								{
+									"key": "op_token",
+									"value": "EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login with wrong body value",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var saved_response = {\r",
+									"    \"context\": {\r",
+									"        \"value\": \"Uq4BpTyHdPbHmiMtHt2dUSB7-88Ahrwkyh_N_C_9UnKDOivwrKsJyv0nOoabzTEtBRL0jDJEg8LW0B7gUnyfNm7_0Z7ak8ScIptKL_cQgi9-F-UpCdh0FGiXDxza3LNOqZWgv0pu15zbpSLUq1nOWeSks9CNU1HIe9J0Q-1OgJ5jmIuqaRygVWpdbDESis1qdxia3LWGV1cASkWzKNcl2kHX23nScKSS8rRPmECEvfMY\"\r",
+									"    },\r",
+									"    \"error\": [\r",
+									"        {\r",
+									"            \"code\": \"ERROR_CODE__WRONG_PASSWORD\",\r",
+									"            \"errorDetails\": \"Password is incorrect\",\r",
+									"            \"field\": \"STEP_SIGN_IN__PASSWORD__PASSWORD\"\r",
+									"        }\r",
+									"    ],\r",
+									"    \"identifier\": {\r",
+									"        \"type\": \"IDENTIFIER_TYPE__EMAIL\",\r",
+									"        \"value\": \"shahbahram508@gmail.com\"\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"function _replacePropertyValue(objKeys, newVal, object) {\r",
+									"  const newObject = object;\r",
+									"\r",
+									"  for (var key in object) {\r",
+									"    if (objKeys.includes(key)) {\r",
+									"      newObject[key] = newVal;\r",
+									"    } else if (typeof(object[key]) === 'object' || typeof(object[key]) === 'array') {\r",
+									"      newObject[key] = replacePropertyValue(objKeys, newVal, object[key]);\r",
+									"    }\r",
+									"  }\r",
+									"\r",
+									"  return newObject;\r",
+									"}\r",
+									"\r",
+									"function replacePropertyValue(objKeys, newVal, object) {\r",
+									"    if (typeof (object) === 'array') {\r",
+									"        var items = []\r",
+									"        for (var item in object) {\r",
+									"            items.push(_replacePropertyValue(objKeys, newVal, item));\r",
+									"        }\r",
+									"        return items\r",
+									"    } else if (typeof (object) === 'object') {\r",
+									"        return _replacePropertyValue(objKeys, newVal, object);\r",
+									"    } else {\r",
+									"        return object\r",
+									"    }\r",
+									"}\r",
+									"\r",
+									"var response = pm.response.json();\r",
+									"\r",
+									"var keys_to_update = [\"value\"];\r",
+									"delete response.show_action_bar\r",
+									"delete response.show_categories\r",
+									"\r",
+									"\r",
+									"var expected_response = replacePropertyValue(keys_to_update, 0, saved_response);\r",
+									"var actual_response = replacePropertyValue(keys_to_update, 0, response);\r",
+									"\r",
+									"pm.test(\"Test data type of the response\", () => {\r",
+									"  pm.expect(pm.response.json()).to.be.an(\"object\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validate schema of response\", () => {\r",
+									"  pm.environment.set(\"expected\", JSON.stringify(expected_response));\r",
+									"  pm.environment.set(\"actual\", JSON.stringify(actual_response));\r",
+									"  pm.expect(expected_response).to.deep.equal(actual_response);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "account.booking.com"
+							},
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "max-age=0"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "px_init=0; cors_js=1; BJS=-; _gid=GA1.2.1703675266.1693407760; pxcts=47d4b64b-4746-11ee-8ddd-59524a7a536e; _pxvid=47d4ab82-4746-11ee-8ddd-aaaaa1bd92fa; bkng_prue=1; _gcl_au=1.1.1146911255.1693407788; _scid=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _pin_unauth=dWlkPVpEUTBNMk16WmprdFl6TmxNUzAwTm1Sa0xUbG1Zamt0TldNd05UTTRNV1kzTW1abA; _sctr=1%7C1693335600000; g_state={\"i_p\":1693414993050,\"i_l\":1}; bkng_ap_lang=en-us; cto_bundle=yK0cGF9xQ2xOcExTM1BjM3hqaDVFdW9Zemp6TWNqOWslMkJjMGpkckhZOW5xWVRUSmt5N080TU45YXc3Y0psMmlISkRDYmV2WU1pNVJwMlZQcHI4dDRHak51UW5Tc2ZUdkFjWGx1TTZyZTA5VEhpZWFpOUJUSHY1aUFQUnNBRVVKM0JJUlg2MFUxcTJ6RzZaMTBaSGZUN1pFN1F5ZyUzRCUzRA; _scid_r=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _derived_epik=dj0yJnU9SlhlU28ycl8xNEg1b0l4RHctUmxVSE5oMFRfeTFTam4mbj1ZV2VZeXlWellTZG5DNC1fenZWUTdnJm09MSZ0PUFBQUFBR1R2YXpzJnJtPTEmcnQ9QUFBQUFHVHZhenMmc3A9Mg; _ga_FPD6YLJCJ7=GS1.1.1693407787.1.1.1693412158.0.0.0; _ga=GA1.2.29860013.1693407760; pcm_consent=consentedAt%3D2023-08-30T16%3A48%3A09.120Z%26countryCode%3DPK%26expiresAt%3D2024-02-26T16%3A48%3A09.120Z%26implicit%3Dfalse%26regulation%3Dnone%26legacyRegulation%3Dnone%26consentId%3D0c32f29a-18cb-4929-b4df-24671b2c58e7%26analytical%3Dtrue%26marketing%3Dtrue; reese84=3:c46FrqlkSnd8Y0i0Iuz/bw==:hh5Hf+vCBe/a+UU9ndO6G/xpPbsrsC5NhND2DUHO01j+cNvOLmlu9BSGpj5z+guabQxFIBcW0gfOtPIoACOvvLnPJQ5oNgsJnd6UfV/WeRg00PiUnnzu31Nx2QGdDdnG9xYBeTnFNL/ey65BePAAWLiUkMqfD3AyXpAp7lIRRAZXdHnDvsnw9JJq+aLLD8sB3kvqAP7PsPGtL2P7dS8s+pZVx6Ph4P8d07tFB0PYIu0zTq0Wy+nWJb73py5HsD8UOcrIP9shbsNwdjnvC/j4aclTGM+axE2c5qvGKFrLaADvKBIu8g+IYuVAbehRl9onyND6Rk6Q0XEqpSp0OtUM1zTkpHuZANr++9Wx3NY6ZvFhCi1RjEIOIjb0gEcX8eR2YulAGYrDruUB+TB4rxp6ZdVXZk9VH0S3g54uBkBYKUhUG2VkviG7ckxOvCUgs4uTk3EmDlQRZz182HbyP4MNvsViQenlqoq1OkDVQjwY5yVAURXeXF9yegMQayoy7fiC:1t0bbP3MDYmrWnEMxpCew/xmP8lsoR/9N9Y6ffLQtNc=; _pxhd=ww6VhM7hZaAjABdcwNoTxHB8beHpoNlFEeyx0WsL%2Fsr518aerBBnVNoV4ZYQtKeLLLgAeyHEQHL3AD1Ila4ovQ%3D%3D%3AcGk2gwSTCSrqxu5sdspqyj9R3YqV7OKsD2r6SPkX1LI7lrokEY732Wgu5F3JQyHzqmTtvFJ%2FkD8vBJ9U7Au9vVeKOaDvwdpe%2FoFvJ3qeznw%3D; bkng_sso_session=e30; bkng_sso_auth=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; bkng_sso_auth_1693420892=CAIQsOnuTRqEAVsXGQs/vkOYB0OoGetWAB8lW2Zy4+j7+USrAARZHG3Iv98pcy0rDSOBA94vuzXlgVB1wUGgBBS5ZnD3liVFTclvYi73w75cAHwjK/vjO/jU6t+koSYm7bVJgoyfRs7E+D3FLS/irTKqVMFtHxJUOb/gyq4PM2/Oz0NhJMH/lZ0Ku+dofA==; _gat=1; _uetsid=542b6da0474611ee82db0961c6c94a6c; _uetvid=542bb400474611ee8208356ca10a19c7; lastSeen=1693420898101; bkng=11UmFuZG9tSVYkc2RlIyh9Yaa29%2F3xUOLbbmD9q%2B5pe3Wh6CkJpYLo8RL4PztOsp2tHSoooyIqWJFbky5SvedT0xjRZx%2FJH1cApkyff3REANdnlPcaaW6HP18fguHJt13lTQ4Zu0QuKkMPmW195b%2FwoTGuDTi6a9ltC6rBof%2B%2BlaHmR56sym%2BwpjwhMKDRMAFFS%2FxhvuYI15ppigOr7LUNYg%3D%3D; bkng_ap=U2FsdGVkX1%2F73Eh0vzq7M15vCgAMvjGd8lUjrzMRZEi6oGFrMANGiWneaesbIek%2BDgkUWS%2FLRCis%0AO2gdrzQgcA%3D%3D%0A; _pxff_fp=1; _pxff_cfp=1; _pxff_ddtc=1; OptanonConsent=implicitConsentCountry=nonGDPR&implicitConsentDate=1693407758176&isGpcEnabled=0&datestamp=Wed+Aug+30+2023+23%3A41%3A40+GMT%2B0500+(Pakistan+Standard+Time)&version=202305.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=cc22644b-18de-4634-a0a2-b2706418ff02&interactionCount=0&landingPath=https%3A%2F%2Faccount.booking.com%2Fsign-in%3Fop_token%3DEgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg&groups=C0001%3A1%2CC0002%3A1; _px3=eea92ab3a08f069846b674165eb75637fa8bf6c46391e561f81e9f0936bf380a:SNYnx1JZnul+/N/xyY1bSQcH/Rlhl4/m7EN8gquYfUEiRYV62ALlb2FVsT6aPCAD87SFxVVm2Nnobw2igUoa7Q==:1000:q8FIM3vTQAvhtF6/W2Srym/MhQU7buuXAmqnUKAJOmPiggEx2lUcU57l7wYtDPuMTWGfKV7CD0/0OwjCkKntVo4jXjaNR5hby8gvXM1EnFpn+S7drYo3H0ImMabkTIjVkUfEpOaKHB4FgPobLNjRcrw2JlE8ygkBXTo50EsTmJeVxYAmdP5fRBYFhfBYmO8c4Y2r4IIs8Anx1/ayfX7qKw==; _pxde=245a9d65a741d45109da5a44090b7a362e30608299f5aee39e486041ccf0e051:eyJ0aW1lc3RhbXAiOjE2OTM0MjA5MDE5MjEsImZfa2IiOjAsImlwY19pZCI6W119; bkng_ap_sso_session=eyJib29raW5nX2dsb2JhbCI6eyJzZXNzaW9ucyI6W3sic2Vzc2lvbl9yZWZlcmVuY2UiOiJkZDdhNjE3MS02ZjNlLTQ3ZGYtODFlZC1mOWExYTNlMjU4YjciLCJyZWZyZXNoX3Rva2VuIjoiQ0FFU2QxSjFEbW5wMjZWUHZ2WE4xcmlWOTlLWWVDR0U2RVUwX2lCblppdHk4b1c0U2xNRDlUQk5mWXlCRlhDVXZ5TVBVZTJiWndKVWQyQnFFQmNFN09ZNVR4LUdKbnMxUy15TDBUQk9lLWg5MVh2NG9iR2RUN0RWU2twblhBWHh6STg3MkZURk1vN0FKU1ViSFRNN0Y4MXZiVUluODlTZFgwMVUifV0sImRhdGFfc3ViamVjdF9pZCI6IjYyNzJlYmM2LWM2YjktNDUyMy1hN2U4LWRiMGIyMmYwMmM5ZCJ9fQ; bkng_sso_ses=eyJib29raW5nX2dsb2JhbCI6W3siYSI6MSwiaCI6Ik5XMzFwTTZxREhxclppOHVJUHhMWFB0QjJFUVRhN0U3K1d3ZVRZTkFSRkEifV19; aws-waf-token=5b5af35f-a4fe-4280-a4d8-4605a76396ec:BQoAsIKDNCgBAAAA:PRt2qZYLWKxv380l7ys8LzEsl7kDEJZFIdHTtI0/IuenQjW6Nj5dOkLxO9vJu0ZWvNuz3fZQkvrEZBsF1zoYtCJjpZTFwniG2+G4UkOCVKuYLf4yO2ctupLyVYO3MGra8k3+8mqktWryHk8vxOYw1W35b2nR2IvjrRqdVsiF9uYgxoH/sJZpZHgoSPAl/GGd+eq2lZoNxZunDEZ6W3zY4KnguwiwRZMz3M1qkoV1XCf7Z70r0KiLXlC9iQOA"
+							},
+							{
+								"key": "origin",
+								"value": "https://account.booking.com"
+							},
+							{
+								"key": "referer",
+								"value": "https://account.booking.com/sign-in/password?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-booking-client",
+								"value": "ap"
+							},
+							{
+								"key": "x-requested-with",
+								"value": "XMLHttpRequest"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"context\": {\r\n        \"value\": \"UqQBpTyHdPbHmiNGhGduHgm9FfSUCJV_Kx9pevH9_ge3OzDevEeFoSy0--tYpKJTxYEIcCkvnOQ1ie5zmN4pdjqTNU4iHqQ32uwF4PZQzNcXHZ7NBSi0zYrlDBLffCjXjAwV2Q9jmT0hZsiew6tq6nh3QlRsrW2itZDEiZRsIW6vwQGnC0oetOdxs3dJjRCfA7JX6AE1qjuxz7l2uuUg8ZYfZUq2GQg=\"\r\n    },\r\n    \"authenticator\": {\r\n        \"type\": \"AUTHENTICATOR_TYPE__PASSWORD\",\r\n        \"value\": \"Password\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "https://account.booking.com/api/identity/authenticate/v1.0/sign_in/password/submit?op_token=EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg",
+							"protocol": "https",
+							"host": [
+								"account",
+								"booking",
+								"com"
+							],
+							"path": [
+								"api",
+								"identity",
+								"authenticate",
+								"v1.0",
+								"sign_in",
+								"password",
+								"submit"
+							],
+							"query": [
+								{
+									"key": "op_token",
+									"value": "EgVvYXV0aCK4BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q1wRVcjRERmhuV1FybzE1Zy0yQkRIQ3V0QzZhM1p1d2JHZlhsQlJ2SFY5REJNSkxzSllHTjRNWXJCQlp3Q1JhUVQ1QmNUSVhYYlA2S0V6TE90SHhQWGpMa1dFYWphcDZ1OWxoaGZUeW9wQm1YSlJrNldIVWhBUUZ2OF9rMWl2M3ZpZ1UzSm4tRngzbjNQdXB0UUx2VER3ZWhzc0JUMlNERjJHX2lPX1FUbDR3eDJ6RmV3djV6UFdHRGtnZTczUWQ5cjlpdzlLNExQQjBFdWxVcVJHREpxZGlyNk9PNWlkMTJxa1VTMW40ZHhlUmVNVzRwVXUySDFPLW5Fak14THFJdURBem4zWHhnanl0Yzh3RFFvd3Voc0gtdXIxbGlWVHlxZWlTNFBxeHhxX3g0RFRNdXBvd1JBQ3FXU3V5V1VBaGh6ZWdPanFReGZHSmVlS2JtSHNmYmN0akhCekplSUh4anNrWlVBbjBzZWRRYnV5Z3UxVDhjdFoyaFlDSUI0VTZGcFBHU2dORnJoRjBGbUpmT1V3V0QxejEwLTBKODdsYUdfOGFobkJZTU9nTkYzMzhnalpzMk9ldWZVYk5BWUhBbnBZOXBWaWJxRzEzNS02WnNZZWpadlpjV0NuT0lnM1RyQWoyb1l3WlNIaDNPRjI0SUc5Q1VUYjBmc1lJSC1MeEJBQ2RjTXZGYWNMY0NRX0thS1puSW9zT2wwcGJweXp6eTNGLVNMc2dMdEtqZFNHVlZSd05XeXkyM3RIS1ZQdnk1eEJtbnYtbzhaWmlxZWFzazJ4azBrQkRpOEIEY29kZSoWCI7IEjCmr4OzzcAmOgBCAFjhmr6nBg"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authority",
+								"value": "www.booking.com"
+							},
+							{
+								"key": "accept",
+								"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cookie",
+								"value": "px_init=0; cors_js=1; OptanonConsent=implicitConsentCountry=nonGDPR&implicitConsentDate=1693407758176; BJS=-; _gid=GA1.2.1703675266.1693407760; pxcts=47d4b64b-4746-11ee-8ddd-59524a7a536e; _pxvid=47d4ab82-4746-11ee-8ddd-aaaaa1bd92fa; bkng_prue=1; _gcl_au=1.1.1146911255.1693407788; _scid=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _pin_unauth=dWlkPVpEUTBNMk16WmprdFl6TmxNUzAwTm1Sa0xUbG1Zamt0TldNd05UTTRNV1kzTW1abA; _sctr=1%7C1693335600000; g_state={\"i_p\":1693414993050,\"i_l\":1}; _pxhd=ww6VhM7hZaAjABdcwNoTxHB8beHpoNlFEeyx0WsL%2Fsr518aerBBnVNoV4ZYQtKeLLLgAeyHEQHL3AD1Ila4ovQ%3D%3D%3AcGk2gwSTCSrqxu5sdspqyj9R3YqV7OKsD2r6SPkX1LI7lrokEY732Wgu5F3JQyHzqmTtvFJ%2FkD8vBJ9U7Au9vVeKOaDvwdpe%2FoFvJ3qeznw%3D; bkng_sso_ses=eyJib29raW5nX2dsb2JhbCI6W3siaCI6IlJ1N3l6UitOV3cwcUNyMWl3cCt5OXFLOW43SGRlWm1kT3NDZWdHNTVlMzgifV19; bkng_sso_session=eyJib29raW5nX2dsb2JhbCI6W3sibG9naW5faGludCI6IlJ1N3l6UitOV3cwcUNyMWl3cCt5OXFLOW43SGRlWm1kT3NDZWdHNTVlMzgifV19; pcm_consent=consentedAt%3D2023-08-30T18%3A42%3A13.301Z%26countryCode%3DPK%26expiresAt%3D2024-02-26T18%3A42%3A13.301Z%26implicit%3Dfalse%26regionCode%3DPB%26regulation%3Dnone%26legacyRegulation%3Dnone%26consentId%3D0c32f29a-18cb-4929-b4df-24671b2c58e7%26analytical%3Dtrue%26marketing%3Dtrue; bkng_sso_auth=CAIQsOnuTRqUAcbcUvz6qtEEgjpfPy3BejWiDMsjHTk1PB+QoEBSVoLDQ2DDetgNSno0gp0fCqTbVZKzgdSOuuCSiIf+LbGeIjOEYafvNbeozmvDc5u3poQpVbY+QpqPYNWw8sTZ3/Oi+6Doy/hyFNF5XYLOxaANGELU34Wqwn3NDp1RThLZEWXLtK73MGXW+glVkJggyphsktwCBpA=; _pxff_cfp=1; _pxff_ddtc=1; reese84=3:C6aPMA33KNsv0wTzQDFA+A==:2Vhyu9fRvGMQ5SQfF+v93aJYMVl192rQF9bGcqD42XAwmVTo0PQjZq6iYx6dEWsyHI2+41OCo64iRIqRGOKv/GSnnP+rBY59BxLwRZyxxmLiXWFxEqD91T/Sm7BFO6meUukiPme99u5bgjx45gio6T1g4uXG/ckxsAD9dYPx/+OYZQhytRWglFc/7J2Z2F2LYrDhJ9ShDBHCNr3pyvueUib4RDJMh473L3RmubVE/vQrhBiEoaGP7+BVZyBp+NRLdq/yfF76oP9urLW0AHiBQOGU5fLm/Ko7/gpAOaw7yrt6OBndKnXM+oaITZZSpgHY7jk8xDUzUwSi4EAJtZPMWL4gMxDa0qPzI9JZSfZrrbegKNz2Ki0mBQa5eJJ9gKuewRf9jkLlAib3f6RFgwBF4Nz7nsSGE0Khk5Qbb/8++ymt1XKT0GhPy/xy6r5zTF3EvqHHxhbgWxe8Gb/MgqAIAw==:jy1nh2HytZ+Q7QOC9uaKJmKhnN/fp68Bl51OwQwd+gk=; lastSeen=0; _ga=GA1.1.29860013.1693407760; _uetsid=542b6da0474611ee82db0961c6c94a6c; _uetvid=542bb400474611ee8208356ca10a19c7; _scid_r=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _derived_epik=dj0yJnU9MzhYM0RUZy0tSHVyMGxhMFAwMTFqOXM0R0J1Q29fWWUmbj1DMUJMMGFfUkpBYVFfWjJhUGo5akJ3Jm09MSZ0PUFBQUFBR1R2bXJrJnJtPTEmcnQ9QUFBQUFHVHZtcmsmc3A9NQ; cto_bundle=PEeIKl9xQ2xOcExTM1BjM3hqaDVFdW9Zemo1ZzFJUmh2aks1Tk5FeXV2Yjkxc2JHM0VqUyUyQlBDeWVlSyUyQjdFdkhYNGZxJTJCUUhMNFlrUlA4ZGNVVDlQJTJCUnhES05vJTJGeCUyQkpYdkZoJTJGazN4VUI2OHMlMkZUV2glMkIxUjdRWHJuOWJoNE9FODBxNU1ndjNDdiUyQmdxdXR4bXRCWlpFWnJvTlg5QSUzRCUzRA; _px3=55f84a182907caf3e2bf13ade82ac95e16f932fb87b93593efadf94332a5ec03:JY72raygmYO26rC/zvm0hHexatxG8W0nl+TLfcU/gOZyRVt1+i1Z++f3ovM2JgzCw+Bj88rDqVSJHcOjgWJdjg==:1000:0ij24yCFIRo6dXXdtYfuzO1YTbDjwfVLQDf9tv2ZKh4008XtuPp/fbd+LqpJlqksOjH19RtaOb5/+nBARUkWTOOcMWlRpOoo0QlEEvGA3nLJViNAzO5lSRq8StfTUDVbNedYkkv2q8fQZnF0Ue0vNzIstxJ0BD7eKIIosVOdypl0sRsNHXOctZwqwd03iQsw+3PbHD5tRsTHVbutfc4MSw==; _pxde=02788b76265834193bbf3ca3e73cba126edc8fd071ec8338a50a5bc39573a99d:eyJ0aW1lc3RhbXAiOjE2OTM0MjQzMTM4MzIsImZfa2IiOjAsImlwY19pZCI6W119; bkng=11UmFuZG9tSVYkc2RlIyh9Yaa29%2F3xUOLblgO%2Fz4BDP5t4ABGC9%2BfIlwCq%2F50SjZXWkjieROjsGzfPlVEGTXOVkXItzDp0EtUjuPvVugGA%2B%2BgjLebvTcNKj4Deel6JCnXTsjIwMzn2pfU99UpxGm%2BsVtzguU4pQgfZi2IbjqqaamvOpEm8VjJr6P1YIYF3xOPcl2oUShNpOP%2BCFIRzOUTWf%2BoTJLdsE4vn9hhlvGOYSRcbyNJMv1BmuA%3D%3D; _ga_FPD6YLJCJ7=GS1.1.1693424201.2.1.1693424320.0.0.0"
+							},
+							{
+								"key": "referer",
+								"value": "https://www.booking.com/searchresults.html?ss=Multan&ssne=Multan&ssne_untouched=Multan&label=gen173bo-1DCAEoggI46AdIM1gDaLUBiAEBmAExuAEXyAEM2AED6AEB-AEDiAIBmAIhqAIDuAKy1r2nBsACAdICJDU5M2IzNDNjLTRiZmMtNGQwNS05YzIwLTdiMmJmNWExYTA4ONgCBOACAQ&sid=644433b11abc219630369a20f8403230&aid=304142&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=-2769709&dest_type=city&checkin=2023-08-31&checkout=2023-09-11&group_adults=1&no_rooms=1&group_children=0"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "document"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "navigate"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "sec-fetch-user",
+								"value": "?1"
+							},
+							{
+								"key": "upgrade-insecure-requests",
+								"value": "1"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+							}
+						],
+						"url": {
+							"raw": "https://www.booking.com/searchresults.html?ss=Multan&ssne=Multan&ssne_untouched=Multan&label=gen173bo-1DCAEoggI46AdIM1gDaLUBiAEBmAExuAEXyAEM2AED6AEB-AEDiAIBmAIhqAIDuAKy1r2nBsACAdICJDU5M2IzNDNjLTRiZmMtNGQwNS05YzIwLTdiMmJmNWExYTA4ONgCBOACAQ&sid=644433b11abc219630369a20f8403230&aid=304142&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=-2769709&dest_type=city&checkin=2023-08-31&checkout=2023-09-11&group_adults=1&no_rooms=1&group_children=0",
+							"protocol": "https",
+							"host": [
+								"www",
+								"booking",
+								"com"
+							],
+							"path": [
+								"searchresults.html"
+							],
+							"query": [
+								{
+									"key": "ss",
+									"value": "Multan"
+								},
+								{
+									"key": "ssne",
+									"value": "Multan"
+								},
+								{
+									"key": "ssne_untouched",
+									"value": "Multan"
+								},
+								{
+									"key": "label",
+									"value": "gen173bo-1DCAEoggI46AdIM1gDaLUBiAEBmAExuAEXyAEM2AED6AEB-AEDiAIBmAIhqAIDuAKy1r2nBsACAdICJDU5M2IzNDNjLTRiZmMtNGQwNS05YzIwLTdiMmJmNWExYTA4ONgCBOACAQ"
+								},
+								{
+									"key": "sid",
+									"value": "644433b11abc219630369a20f8403230"
+								},
+								{
+									"key": "aid",
+									"value": "304142"
+								},
+								{
+									"key": "lang",
+									"value": "en-us"
+								},
+								{
+									"key": "sb",
+									"value": "1"
+								},
+								{
+									"key": "src_elem",
+									"value": "sb"
+								},
+								{
+									"key": "src",
+									"value": "searchresults"
+								},
+								{
+									"key": "dest_id",
+									"value": "-2769709"
+								},
+								{
+									"key": "dest_type",
+									"value": "city"
+								},
+								{
+									"key": "checkin",
+									"value": "2023-08-31"
+								},
+								{
+									"key": "checkout",
+									"value": "2023-09-11"
+								},
+								{
+									"key": "group_adults",
+									"value": "1"
+								},
+								{
+									"key": "no_rooms",
+									"value": "1"
+								},
+								{
+									"key": "group_children",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "Booking",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authority",
+								"value": "secure.booking.com"
+							},
+							{
+								"key": "accept",
+								"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "max-age=0"
+							},
+							{
+								"key": "cookie",
+								"value": "px_init=0; cors_js=1; BJS=-; _gid=GA1.2.1703675266.1693407760; pxcts=47d4b64b-4746-11ee-8ddd-59524a7a536e; _pxvid=47d4ab82-4746-11ee-8ddd-aaaaa1bd92fa; bkng_prue=1; _gcl_au=1.1.1146911255.1693407788; _scid=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _pin_unauth=dWlkPVpEUTBNMk16WmprdFl6TmxNUzAwTm1Sa0xUbG1Zamt0TldNd05UTTRNV1kzTW1abA; _sctr=1%7C1693335600000; _pxhd=ww6VhM7hZaAjABdcwNoTxHB8beHpoNlFEeyx0WsL%2Fsr518aerBBnVNoV4ZYQtKeLLLgAeyHEQHL3AD1Ila4ovQ%3D%3D%3AcGk2gwSTCSrqxu5sdspqyj9R3YqV7OKsD2r6SPkX1LI7lrokEY732Wgu5F3JQyHzqmTtvFJ%2FkD8vBJ9U7Au9vVeKOaDvwdpe%2FoFvJ3qeznw%3D; g_state={\"i_p\":1693511342883,\"i_l\":2}; bkng_sso_ses=eyJib29raW5nX2dsb2JhbCI6W3siaCI6IlA1ZGxHZXRlbitlNFFsWS92dE1wMW9CaUdJU3lCeEtzVGhTNnBCUEhUS0kifV19; bkng_sso_session=eyJib29raW5nX2dsb2JhbCI6W3sibG9naW5faGludCI6IlA1ZGxHZXRlbitlNFFsWS92dE1wMW9CaUdJU3lCeEtzVGhTNnBCUEhUS0kifV19; pcm_consent=consentedAt%3D2023-08-30T19%3A49%3A24.244Z%26countryCode%3DPK%26expiresAt%3D2024-02-26T19%3A49%3A24.244Z%26implicit%3Dfalse%26regionCode%3DPB%26regulation%3Dnone%26legacyRegulation%3Dnone%26consentId%3D0c32f29a-18cb-4929-b4df-24671b2c58e7%26analytical%3Dtrue%26marketing%3Dtrue; OptanonConsent=implicitConsentCountry=nonGDPR&implicitConsentDate=1693407758176; bkng_prue=1; _pin_unauth=dWlkPVpEUTBNMk16WmprdFl6TmxNUzAwTm1Sa0xUbG1Zamt0TldNd05UTTRNV1kzTW1abA; reese84=3:LVWW7aUX8ikkj1v/XI56nw==:SpW3u9Xb3zxaO0VnSeanhgJhBugYeHgRxJkn7JFhdCC9dGEyUOurCxJILufLMA8MTf78PuGqiMM03+0Ac7ygO/D6ZhKpMRIgfOlrqPeRmYZFvb0Eo9eHIme6TV2oEwEp2RA5Lj34cJoS1s3W0+5rEgoptXGNOa8ymTfOSkPqkgnGP4UlIe6PgDdoioOTgV5TSc9JnzgAj88fUa7H4TQnkkC2k+5f6eNvQEGDjMR+wpG2l4BFl0xd0nufmoG5h+mzXuriSl/N9mg5C8Mmn9Wi+bE/n6GnsdpVtmplJwuR/fw0OLJoTJ13OWeqfocK4GN2ofMrYz95ZpH5ga44MmurWf+XQcXKjK4QOYOMS/5z4jvTe5WT2k4d0GURzgdmro5Kwhtk/cu8wCUhC3hyw9/5DPwmcT6znpYJAMaz5G3JKcsHjBJuDuOrQGarKSsH41IZ1UcMZI1WXkeHfT1Ue2LkMw==:6ViqQSJdES7fWvEX7YCMnxX7HStKCf/vSLrzDTBONWM=; bs=%7B%22gc%22%3A1%7D; _derived_epik=dj0yJnU9MTVDX0RnRjJtS2pmV2h2OTRScUg3OXE2LXY1NFFXa2kmbj05Z0c1TWVON29jN1JJWDVkTGlfd3NBJm09MSZ0PUFBQUFBR1R2XzFvJnJtPTEmcnQ9QUFBQUFHVHZfMW8mc3A9NQ; _uetsid=542b6da0474611ee82db0961c6c94a6c; _uetvid=542bb400474611ee8208356ca10a19c7; _scid_r=a43bc4b9-e833-48ce-b52c-ac80cfb95ffe; _derived_epik=dj0yJnU9Yk5QTjE0ZlhQMnFjUjBpVktyWDdzTGsyWXZLbDJnT2wmbj0xNHViWUFXZjBKMFNZNHlOMXBfRFh3Jm09MSZ0PUFBQUFBR1R2XzQ4JnJtPTEmcnQ9QUFBQUFHVHZfNDgmc3A9NQ; cto_bundle=ftRSWl9xQ2xOcExTM1BjM3hqaDVFdW9ZemoydUhEeFRXVWkyaW52eEolMkZHaG45R3RYJTJCcW5NbEgydEY2eTRrTk5DVXlIcTAyRkUxQiUyRkdlMm5BM1Z1WlZVUDVVb1NLSkhxY2ZWUTFrTEVIc2JSRzZHbGJDdjYlMkJlNXo5eEIyeXZYVUliOXFmQUNYNEdLalBoRTBWTXljV0pJeWtxdyUzRCUzRA; _ga_FPD6YLJCJ7=GS1.1.1693450038.3.1.1693450262.0.0.0; _ga=GA1.2.29860013.1693407760; _px3=3a87a7052c046dcd2e0b00cf9ccacb368b0c807e74fdc7c5fe99f1bf3cae1d3a:iYByFdncnGZwP5yhBmGBhhI1NGgAzJA2eFSm18tZWrlTpefO4Z8PMq9oYU0ShUB/I0dXGPsBoDiN3FdCXnloeQ==:1000:0VxY54zEoK1jSageu+6Ztls7HjpV/l5ygshJ1ROD41qwiAxjuK3K428cgN6au9cpZGS67FRwYDihvxc8VqpXbKG70S3YsFtPSF8ExQaSN+n+K1xwHx2CBoLRJ0wbMEhsM7zX35OLFRlpMkt9lmqfIKJlfjTPZcnAzpaP9PeOW8R/8GjnGuw2B1JbOTohOtSj/jAhx25lvZ4lOcjYkpjkaw==; _pxde=eb9c7c553fed4bd71b2a5b92689ea9d96401614cde30be0d5712b05bf70bc932:eyJ0aW1lc3RhbXAiOjE2OTM0NTAyNjkyNjAsImZfa2IiOjAsImlwY19pZCI6W119; lastSeen=0; _gat=1; bkng_sso_auth=CAIQsOnuTRqUAU8GhI0O0/Hs69y4GDzL96u0nRYLZmGduhJ3/uOiERweVik/wUFpWLY07wllIArxABKu+bSaVRGqX5JstWjskgfpp6UWNoC59+mkwDt9lpJkSj82qHfI11dhvtXYGU6pNaSp6zuAMlG286cfBFRftZy8n4SIqG5pclzVbRN+MWFEWjW6aqqnHclpL9/7ctGAvMlK9Sg=; bkng=11UmFuZG9tSVYkc2RlIyh9Yaa29%2F3xUOLbA1O770KQL%2BwD%2FmEfen2FetpiUgu191ExdjCUIWWQoZgZIiWkZ5pKIDQnjcdQKwo5J4vqQzxKVx8BSZogfQi5EKqkDyANh8XlWpZBYyZU894mzZCBthJTX6t8K2XdqQq2yUfCeJH%2B%2FZ6DFMiZYpODG3VyoTrQCZF0unKLAf0Bs2YiH0wBjdqJy%2FxI9pCXW2vukNaTHJP0OKlpMdDZmz1O8g%3D%3D"
+							},
+							{
+								"key": "referer",
+								"value": "https://secure.booking.com/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "document"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "navigate"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "sec-fetch-user",
+								"value": "?1"
+							},
+							{
+								"key": "upgrade-insecure-requests",
+								"value": "1"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+							}
+						],
+						"url": {
+							"raw": "https://secure.booking.com/confirmation.html?aid=304142&label=gen173bo-1FCAEoggI46AdIM1gDaLUBiAEBmAExuAEXyAEM2AEB6AEB-AEDiAIBmAIhqAIDuAKy1r2nBsACAdICJDU5M2IzNDNjLTRiZmMtNGQwNS05YzIwLTdiMmJmNWExYTA4ONgCBeACAQ&sid=40ded17047f45bfb6912c2f09b5b463f&auth_key=XJS95iesognfvA34&bp_travel_purpose=leisure&hostname=www.booking.com&rt_num_blocks=2&send_sms_confirmation=1&source=book&srpvid=2cde8b6e1e6a0421&ua_created=0&",
+							"protocol": "https",
+							"host": [
+								"secure",
+								"booking",
+								"com"
+							],
+							"path": [
+								"confirmation.html"
+							],
+							"query": [
+								{
+									"key": "aid",
+									"value": "304142"
+								},
+								{
+									"key": "label",
+									"value": "gen173bo-1FCAEoggI46AdIM1gDaLUBiAEBmAExuAEXyAEM2AEB6AEB-AEDiAIBmAIhqAIDuAKy1r2nBsACAdICJDU5M2IzNDNjLTRiZmMtNGQwNS05YzIwLTdiMmJmNWExYTA4ONgCBeACAQ"
+								},
+								{
+									"key": "sid",
+									"value": "40ded17047f45bfb6912c2f09b5b463f"
+								},
+								{
+									"key": "auth_key",
+									"value": "XJS95iesognfvA34"
+								},
+								{
+									"key": "bp_travel_purpose",
+									"value": "leisure"
+								},
+								{
+									"key": "hostname",
+									"value": "www.booking.com"
+								},
+								{
+									"key": "rt_num_blocks",
+									"value": "2"
+								},
+								{
+									"key": "send_sms_confirmation",
+									"value": "1"
+								},
+								{
+									"key": "source",
+									"value": "book"
+								},
+								{
+									"key": "srpvid",
+									"value": "2cde8b6e1e6a0421"
+								},
+								{
+									"key": "ua_created",
+									"value": "0"
+								},
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "redirect_uri",
+			"value": ""
+		}
+	]
+}
