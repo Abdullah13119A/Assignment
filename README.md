@@ -39,3 +39,20 @@ Describe the purpose of the tests.
 List the steps on how to run the tests.
 Include information on how to debug the tests.
 Link to the Cypress documentation.
+
+# Postman to run API Tests
+
+To open a Postman collection file in Postman, you can follow these steps:
+
+Open Postman.
+Click on the Import button in the top left corner.
+Select the Import File option and choose the JSON collection file from your local file system.
+Click on the Import button to load the collection.
+The collection will now be available in Postman under the Collections tab on the left sidebar.
+
+Here are some additional things to keep in mind when opening a Postman collection file in Postman:
+
+The collection file must be in JSON format. If the file is not in JSON format, Postman will not be able to import it.
+The collection file must be saved in the local file system. Postman cannot import collections that are stored in a remote location.
+You can import multiple collection files at the same time. Simply select the files that you want to import and click on the Import button.
+I hope this helps! Let me know if you have any other questions.
